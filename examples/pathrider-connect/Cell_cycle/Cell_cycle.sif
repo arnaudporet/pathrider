@@ -1,0 +1,650 @@
+BUB3	membership_PXrel	MAD2L2::BUB1B::BUB3
+BUB3	membership_PXrel	MAD2L1::BUB1B::BUB3
+E2F5::RBL1::TFDP1	repression_GErel	MYC
+CDC26	membership_PXrel	CDC26::FZR1
+CDC26	membership_PXrel	CDC26::CDC20
+WEE2	inhibition_PPrel,phosphorylation_PPrel	CDK1
+TTK	activation_PPrel,phosphorylation_PPrel	MAD1L1
+HDAC2	binding/association_PPrel	RB1
+CCND3	membership_PXrel	CDK6::CCND3
+CCND3	membership_PXrel	CDK4::CCND3
+CDK2	membership_PXrel	CDK2::CCNA2
+CDK2	membership_PXrel	CDK2::CCNA1
+CDK2	membership_PXrel	CDK2::CCNE1
+CDK2	membership_PXrel	CDK2::CCNE2
+ORC3	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+CDC14A	activation_PPrel,dephosphorylation_PPrel	CDC26::FZR1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	ANAPC2::FZR1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC23
+CDC14A	activation_PPrel,dephosphorylation_PPrel	ANAPC13::FZR1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC16
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC5
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC27
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	ANAPC10::FZR1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	ANAPC4::FZR1
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC7
+CDC14A	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC11
+FZR1::CDC16	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::CDC16	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+FZR1::CDC16	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+CCND1	membership_PXrel	CDK4::CCND1
+CCND1	membership_PXrel	CDK6::CCND1
+E2F4	membership_PXrel	E2F4::TFDP2
+E2F4	membership_PXrel	E2F4::RBL1::TFDP1
+E2F4	membership_PXrel	E2F4::RBL1::TFDP2
+E2F4	membership_PXrel	E2F4::TFDP1
+CCNA1	membership_PXrel	CDK2::CCNA1
+CCNA1	membership_PXrel	CCNA1::CDK1
+CDC25C	activation_PPrel,dephosphorylation_PPrel	CDK1
+PRKDC	activation_PPrel,phosphorylation_PPrel	TP53
+CDKN2B	inhibition_PPrel	CDK4::CCND3
+CDKN2B	inhibition_PPrel	CDK6::CCND1
+CDKN2B	inhibition_PPrel	CDK6::CCND2
+CDKN2B	inhibition_PPrel	CDK6::CCND3
+CDKN2B	inhibition_PPrel	CDK4::CCND1
+CDKN2B	inhibition_PPrel	CDK4::CCND2
+RBL2	dissociation_PPrel	E2F5::TFDP2
+RBL2	dissociation_PPrel	E2F4::TFDP1
+RBL2	dissociation_PPrel	E2F4::TFDP2
+RBL2	dissociation_PPrel	E2F5::TFDP1
+CCNE2	membership_PXrel	CDK2::CCNE2
+CCNA2	membership_PXrel	CCNA2::CDK1
+CCNA2	membership_PXrel	CDK2::CCNA2
+MCM3	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+ORC2	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+TP53	expression_GErel	GADD45B
+TP53	expression_GErel	SFN
+TP53	expression_GErel	CDKN1A
+TP53	expression_GErel	GADD45G
+TP53	expression_GErel	GADD45A
+WEE1	inhibition_PPrel,phosphorylation_PPrel	CDK1
+MCM2	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+ANAPC4::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+ANAPC4::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+ANAPC4::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+MCM6	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+CDC20	membership_PXrel	ANAPC13::CDC20
+CDC20	membership_PXrel	ANAPC11::CDC20
+CDC20	membership_PXrel	ANAPC5::CDC20
+CDC20	membership_PXrel	CDC26::CDC20
+CDC20	membership_PXrel	ANAPC2::CDC20
+CDC20	membership_PXrel	ANAPC10::CDC20
+CDC20	membership_PXrel	ANAPC7::CDC20
+CDC20	membership_PXrel	ANAPC4::CDC20
+CDC20	membership_PXrel	ANAPC1::CDC20
+CDC20	membership_PXrel	CDC23::CDC20
+CDC20	membership_PXrel	CDC20::CDC27
+CDC20	membership_PXrel	CDC16::CDC20
+E2F4::RBL1::TFDP2	repression_GErel	MYC
+CHEK2	inhibition_PPrel,phosphorylation_PPrel	CDC25A
+CHEK2	inhibition_PPrel,phosphorylation_PPrel	CDC25B
+CHEK2	inhibition_PPrel,phosphorylation_PPrel	CDC25C
+CHEK2	activation_PPrel,phosphorylation_PPrel	TP53
+YWHAG	binding/association_PPrel	CDC25B
+YWHAG	binding/association_PPrel	CDC25C
+CDC25A	activation_PPrel,dephosphorylation_PPrel	CDK6
+CDC25A	activation_PPrel,dephosphorylation_PPrel	CDK2
+CDC25A	activation_PPrel,dephosphorylation_PPrel	CDK1
+CDC25A	activation_PPrel,dephosphorylation_PPrel	CDK4
+SKP1	membership_PXrel	SKP1::SKP2
+GADD45G	inhibition_PPrel	CCNB2
+GADD45G	activation_PPrel	PCNA
+GADD45G	inhibition_PPrel	CCNB3
+GADD45G	inhibition_PPrel	CCNB1
+RBX1	membership_PXrel	SKP2::RBX1
+FZR1::ANAPC7	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+FZR1::ANAPC7	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::ANAPC7	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+TGFB3	activation_PPrel,indirect effect_PPrel	SMAD3
+TGFB3	activation_PPrel,indirect effect_PPrel	SMAD2
+RAD21	membership_PXrel	STAG1::SMC1B::RAD21::SMC3
+RAD21	membership_PXrel	STAG1::RAD21::SMC1A::SMC3
+RAD21	membership_PXrel	STAG2::SMC1B::RAD21::SMC3
+RAD21	membership_PXrel	STAG2::RAD21::SMC1A::SMC3
+ANAPC7	membership_PXrel	ANAPC7::CDC20
+ANAPC7	membership_PXrel	FZR1::ANAPC7
+CUL1	membership_PXrel	SKP2::CUL1
+CDK6::CCND1	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK6::CCND1	inhibition_PPrel,phosphorylation_PPrel	RBL2
+CDK6::CCND1	inhibition_PPrel,phosphorylation_PPrel	RB1
+MCM5	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+YWHAZ	binding/association_PPrel	CDC25C
+YWHAZ	binding/association_PPrel	CDC25B
+E2F1	membership_PXrel	E2F1::TFDP1
+E2F1	membership_PXrel	E2F1::TFDP2
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC4::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC4::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC4::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDKN2C	inhibition_PPrel	CDK4::CCND3
+CDKN2C	inhibition_PPrel	CDK6::CCND1
+CDKN2C	inhibition_PPrel	CDK6::CCND2
+CDKN2C	inhibition_PPrel	CDK6::CCND3
+CDKN2C	inhibition_PPrel	CDK4::CCND1
+CDKN2C	inhibition_PPrel	CDK4::CCND2
+ZBTB17	expression_GErel	CDKN2B
+E2F3::TFDP1	expression_GErel	CCNE2
+E2F3::TFDP1	expression_GErel	CCNE1
+BUB1B	membership_PXrel	MAD2L2::BUB1B::BUB3
+BUB1B	membership_PXrel	MAD2L1::BUB1B::BUB3
+CDK7	membership_PXrel	CDK7::CCNH
+SMC1B	membership_PXrel	STAG2::SMC1B::RAD21::SMC3
+SMC1B	membership_PXrel	STAG1::SMC1B::RAD21::SMC3
+SKP2	membership_PXrel	SKP2::CUL1
+SKP2	membership_PXrel	SKP2::RBX1
+SKP2	membership_PXrel	SKP1::SKP2
+PTTG1	inhibition_PPrel	ESPL1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC13::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC13::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC13::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+MCM7	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+CCNB3::CDK1	activation_PPrel,phosphorylation_PPrel	PLK1
+DBF4::CDC7	activation_PPrel,phosphorylation_PPrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+SMAD3	membership_PXrel	SMAD3::SMAD4
+SKP2::RBX1	inhibition_PPrel,ubiquitination_PPrel	CDKN1C
+SKP2::RBX1	inhibition_PPrel,ubiquitination_PPrel	CDKN1A
+SKP2::RBX1	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE1
+SKP2::RBX1	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE2
+SKP2::RBX1	inhibition_PPrel,ubiquitination_PPrel	CDKN1B
+CDC27	membership_PXrel	CDC20::CDC27
+CDC27	membership_PXrel	FZR1::CDC27
+GADD45A	inhibition_PPrel	CCNB1
+GADD45A	inhibition_PPrel	CCNB2
+GADD45A	activation_PPrel	PCNA
+GADD45A	inhibition_PPrel	CCNB3
+CDK2::CCNA1	inhibition_PPrel,phosphorylation_PPrel	RB1
+CDK2::CCNA1	inhibition_PPrel,phosphorylation_PPrel	E2F1
+CDK2::CCNA1	inhibition_PPrel,phosphorylation_PPrel	E2F2
+CDK2::CCNA1	inhibition_PPrel,phosphorylation_PPrel	E2F3
+CDK2::CCNA1	inhibition_PPrel,phosphorylation_PPrel	CDC6
+E2F2::TFDP2	expression_GErel	CCNE1
+E2F2::TFDP2	expression_GErel	CCNE2
+ANAPC4	membership_PXrel	ANAPC4::FZR1
+ANAPC4	membership_PXrel	ANAPC4::CDC20
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+CDC26::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+CDC26::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+CDC26::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+CDK4::CCND1	inhibition_PPrel,phosphorylation_PPrel	RB1
+CDK4::CCND1	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK4::CCND1	inhibition_PPrel,phosphorylation_PPrel	RBL2
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC11::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC11::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC11::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+CDC26::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+CDC26::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+CDC26::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC7::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC7::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC7::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDC7	membership_PXrel	DBF4::CDC7
+GSK3B	inhibition_PPrel,phosphorylation_PPrel	CCND1
+GSK3B	inhibition_PPrel,phosphorylation_PPrel	CCND2
+GSK3B	inhibition_PPrel,phosphorylation_PPrel	CCND3
+SMC3	membership_PXrel	STAG2::SMC1B::RAD21::SMC3
+SMC3	membership_PXrel	STAG2::RAD21::SMC1A::SMC3
+SMC3	membership_PXrel	STAG1::SMC1B::RAD21::SMC3
+SMC3	membership_PXrel	STAG1::RAD21::SMC1A::SMC3
+FZR1	membership_PXrel	FZR1::ANAPC5
+FZR1	membership_PXrel	ANAPC2::FZR1
+FZR1	membership_PXrel	FZR1::CDC23
+FZR1	membership_PXrel	FZR1::ANAPC1
+FZR1	membership_PXrel	ANAPC4::FZR1
+FZR1	membership_PXrel	FZR1::ANAPC7
+FZR1	membership_PXrel	ANAPC10::FZR1
+FZR1	membership_PXrel	FZR1::ANAPC11
+FZR1	membership_PXrel	ANAPC13::FZR1
+FZR1	membership_PXrel	FZR1::CDC16
+FZR1	membership_PXrel	CDC26::FZR1
+FZR1	membership_PXrel	FZR1::CDC27
+ANAPC5	membership_PXrel	FZR1::ANAPC5
+ANAPC5	membership_PXrel	ANAPC5::CDC20
+CDKN1C	binding/association_PPrel	CDK6::CCND1
+CDKN1C	binding/association_PPrel	CDK6::CCND2
+CDKN1C	binding/association_PPrel	CDK6::CCND3
+CDKN1C	inhibition_PPrel	CDK2::CCNA2
+CDKN1C	inhibition_PPrel	CDK2::CCNA1
+CDKN1C	binding/association_PPrel	CDK4::CCND1
+CDKN1C	binding/association_PPrel	CDK4::CCND2
+CDKN1C	binding/association_PPrel	CDK4::CCND3
+CDC45	binding/association_PPrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+CDC23	membership_PXrel	FZR1::CDC23
+CDC23	membership_PXrel	CDC23::CDC20
+SKP2::CUL1	inhibition_PPrel,ubiquitination_PPrel	CDKN1A
+SKP2::CUL1	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE1
+SKP2::CUL1	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE2
+SKP2::CUL1	inhibition_PPrel,ubiquitination_PPrel	CDKN1B
+SKP2::CUL1	inhibition_PPrel,ubiquitination_PPrel	CDKN1C
+YWHAQ	binding/association_PPrel	CDC25C
+YWHAQ	binding/association_PPrel	CDC25B
+E2F1::TFDP1	expression_GErel	CCNE2
+E2F1::TFDP1	expression_GErel	CCNE1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC5::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC5::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC5::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+CCNB2	membership_PXrel	CCNB2::CDK1
+STAG2	membership_PXrel	STAG2::RAD21::SMC1A::SMC3
+STAG2	membership_PXrel	STAG2::SMC1B::RAD21::SMC3
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+CDC20::CDC27	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+CDC20::CDC27	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+CDC20::CDC27	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+HDAC1	binding/association_PPrel	RB1
+CREBBP	activation_PPrel	TP53
+PLK1	inhibition_PPrel,phosphorylation_PPrel	PKMYT1
+PLK1	activation_PPrel,phosphorylation_PPrel	CDC25B
+PLK1	activation_PPrel,phosphorylation_PPrel	CDC25C
+ORC1	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+CDC25B	activation_PPrel,dephosphorylation_PPrel	CDK1
+CCNB1::CDK1	activation_PPrel,phosphorylation_PPrel	PLK1
+CCND2	membership_PXrel	CDK4::CCND2
+CCND2	membership_PXrel	CDK6::CCND2
+CHEK1	inhibition_PPrel,phosphorylation_PPrel	CDC25A
+CHEK1	inhibition_PPrel,phosphorylation_PPrel	CDC25B
+CHEK1	inhibition_PPrel,phosphorylation_PPrel	CDC25C
+CHEK1	activation_PPrel,phosphorylation_PPrel	TP53
+E2F3::TFDP2	expression_GErel	CCNE2
+E2F3::TFDP2	expression_GErel	CCNE1
+RBL1	dissociation_PPrel	E2F5::TFDP1
+RBL1	dissociation_PPrel	E2F5::TFDP2
+RBL1	membership_PXrel	E2F4::RBL1::TFDP1
+RBL1	membership_PXrel	E2F4::RBL1::TFDP2
+RBL1	membership_PXrel	E2F5::RBL1::TFDP1
+RBL1	membership_PXrel	E2F5::RBL1::TFDP2
+RBL1	dissociation_PPrel	E2F4::TFDP1
+RBL1	dissociation_PPrel	E2F4::TFDP2
+CDK6::CCND3	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK6::CCND3	inhibition_PPrel,phosphorylation_PPrel	RBL2
+CDK6::CCND3	inhibition_PPrel,phosphorylation_PPrel	RB1
+FZR1::ANAPC11	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+FZR1::ANAPC11	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::ANAPC11	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+CCNA2::CDK1	activation_PPrel,phosphorylation_PPrel	RB1
+CDK2::CCNE1	inhibition_PPrel,phosphorylation_PPrel	RB1
+CDK2::CCNE1	inhibition_PPrel,phosphorylation_PPrel	CDKN1B
+CDK2::CCNE1	inhibition_PPrel,phosphorylation_PPrel	CDKN1C
+TGFB1	activation_PPrel,indirect effect_PPrel	SMAD2
+TGFB1	activation_PPrel,indirect effect_PPrel	SMAD3
+FZR1::CDC27	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+FZR1::CDC27	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::CDC27	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+CDC6	binding/association_PPrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+YWHAE	binding/association_PPrel	CDC25B
+YWHAE	binding/association_PPrel	CDC25C
+PKMYT1	inhibition_PPrel,phosphorylation_PPrel	CDK1
+TGFB2	activation_PPrel,indirect effect_PPrel	SMAD2
+TGFB2	activation_PPrel,indirect effect_PPrel	SMAD3
+CCNE1	membership_PXrel	CDK2::CCNE1
+ESPL1	inhibition_PPrel	STAG1::SMC1B::RAD21::SMC3
+ESPL1	inhibition_PPrel	STAG1::RAD21::SMC1A::SMC3
+ESPL1	inhibition_PPrel	STAG2::SMC1B::RAD21::SMC3
+ESPL1	inhibition_PPrel	STAG2::RAD21::SMC1A::SMC3
+MCM4	membership_PXrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+MDM2	inhibition_PPrel	RB1
+MDM2	inhibition_PPrel	TP53
+SMAD4	membership_PXrel	SMAD3::SMAD4
+SMAD4	membership_PXrel	SMAD2::SMAD4
+ORC5	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+CDK4::CCND2	inhibition_PPrel,phosphorylation_PPrel	RB1
+CDK4::CCND2	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK4::CCND2	inhibition_PPrel,phosphorylation_PPrel	RBL2
+E2F2	membership_PXrel	E2F2::TFDP1
+E2F2	membership_PXrel	E2F2::TFDP2
+FZR1::ANAPC1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::ANAPC1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+FZR1::ANAPC1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+CDC16	membership_PXrel	FZR1::CDC16
+CDC16	membership_PXrel	CDC16::CDC20
+EP300	activation_PPrel	TP53
+ANAPC1	membership_PXrel	ANAPC1::CDC20
+ANAPC1	membership_PXrel	FZR1::ANAPC1
+SFN	inhibition_PPrel	CCNB1
+SFN	inhibition_PPrel	CCNB2
+SFN	inhibition_PPrel	CCNB3
+ORC6	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+SMAD2	membership_PXrel	SMAD2::SMAD4
+MAD1L1	activation_PPrel	MAD2L1
+MAD1L1	activation_PPrel	MAD2L2
+ANAPC13::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+ANAPC13::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+ANAPC13::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC27
+CDC14B	activation_PPrel,dephosphorylation_PPrel	ANAPC2::FZR1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	ANAPC10::FZR1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC7
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC5
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::ANAPC11
+CDC14B	activation_PPrel,dephosphorylation_PPrel	CDC26::FZR1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC23
+CDC14B	activation_PPrel,dephosphorylation_PPrel	FZR1::CDC16
+CDC14B	activation_PPrel,dephosphorylation_PPrel	ANAPC13::FZR1
+CDC14B	activation_PPrel,dephosphorylation_PPrel	ANAPC4::FZR1
+CDC23::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDC23::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+CDC23::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+CDK7::CCNH	activation_PPrel,phosphorylation_PPrel	CDK2
+CDK7::CCNH	activation_PPrel,phosphorylation_PPrel	CDK1
+CDK2::CCNE2	inhibition_PPrel,phosphorylation_PPrel	CDKN1B
+CDK2::CCNE2	inhibition_PPrel,phosphorylation_PPrel	CDKN1C
+CDK2::CCNE2	inhibition_PPrel,phosphorylation_PPrel	RB1
+CDKN1B	inhibition_PPrel	CDK2::CCNA2
+CDKN1B	inhibition_PPrel	CDK2::CCNA1
+CDKN1B	binding/association_PPrel	CDK4::CCND1
+CDKN1B	binding/association_PPrel	CDK4::CCND2
+CDKN1B	binding/association_PPrel	CDK4::CCND3
+CDKN1B	binding/association_PPrel	CDK6::CCND1
+CDKN1B	binding/association_PPrel	CDK6::CCND2
+CDKN1B	binding/association_PPrel	CDK6::CCND3
+FZR1::ANAPC5	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+FZR1::ANAPC5	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+FZR1::ANAPC5	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+ATM	activation_PPrel,phosphorylation_PPrel	CHEK2
+ATM	activation_PPrel,phosphorylation_PPrel	TP53
+ATM	activation_PPrel,phosphorylation_PPrel	CHEK1
+STAG1	membership_PXrel	STAG1::SMC1B::RAD21::SMC3
+STAG1	membership_PXrel	STAG1::RAD21::SMC1A::SMC3
+SKP1::SKP2	inhibition_PPrel,ubiquitination_PPrel	CDKN1A
+SKP1::SKP2	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE1
+SKP1::SKP2	inhibition_PPrel,ubiquitination_PPrel	CDK2::CCNE2
+SKP1::SKP2	inhibition_PPrel,ubiquitination_PPrel	CDKN1B
+SKP1::SKP2	inhibition_PPrel,ubiquitination_PPrel	CDKN1C
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC2::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC2::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC2::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+MAD2L1	membership_PXrel	MAD2L1::BUB1B::BUB3
+YWHAB	binding/association_PPrel	CDC25C
+YWHAB	binding/association_PPrel	CDC25B
+CDKN2A	inhibition_PPrel	CDK6::CCND1
+CDKN2A	inhibition_PPrel	CDK6::CCND2
+CDKN2A	inhibition_PPrel	CDK6::CCND3
+CDKN2A	inhibition_PPrel	MDM2
+CDKN2A	inhibition_PPrel	CDK4::CCND1
+CDKN2A	inhibition_PPrel	CDK4::CCND2
+CDKN2A	inhibition_PPrel	CDK4::CCND3
+CDKN2D	inhibition_PPrel	CDK4::CCND3
+CDKN2D	inhibition_PPrel	CDK6::CCND1
+CDKN2D	inhibition_PPrel	CDK6::CCND2
+CDKN2D	inhibition_PPrel	CDK6::CCND3
+CDKN2D	inhibition_PPrel	CDK4::CCND1
+CDKN2D	inhibition_PPrel	CDK4::CCND2
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC10::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC10::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC10::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC13
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	CDC27
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC4
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	CDC23
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC11
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	CDC26
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC7
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC1
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC2
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC10
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	CDC16
+MAD2L2::BUB1B::BUB3	inhibition_PPrel	ANAPC5
+ATR	activation_PPrel,phosphorylation_PPrel	TP53
+ATR	activation_PPrel,phosphorylation_PPrel	CHEK1
+ATR	activation_PPrel,phosphorylation_PPrel	CHEK2
+FZR1::CDC23	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+FZR1::CDC23	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+FZR1::CDC23	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+TFDP2	membership_PXrel	E2F4::RBL1::TFDP2
+TFDP2	membership_PXrel	E2F5::RBL1::TFDP2
+TFDP2	membership_PXrel	E2F4::TFDP2
+TFDP2	membership_PXrel	E2F5::TFDP2
+TFDP2	membership_PXrel	E2F1::TFDP2
+TFDP2	membership_PXrel	E2F2::TFDP2
+TFDP2	membership_PXrel	E2F3::TFDP2
+CDK6::CCND2	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK6::CCND2	inhibition_PPrel,phosphorylation_PPrel	RBL2
+CDK6::CCND2	inhibition_PPrel,phosphorylation_PPrel	RB1
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC13
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC1
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC7
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	CDC23
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC2
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC5
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	CDC26
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC11
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC4
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	ANAPC10
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	CDC16
+MAD2L1::BUB1B::BUB3	inhibition_PPrel	CDC27
+E2F3	membership_PXrel	E2F3::TFDP1
+E2F3	membership_PXrel	E2F3::TFDP2
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+CDC16::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+CDC16::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+CDC16::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+GADD45B	inhibition_PPrel	CCNB3
+GADD45B	inhibition_PPrel	CCNB1
+GADD45B	inhibition_PPrel	CCNB2
+GADD45B	activation_PPrel	PCNA
+ANAPC11	membership_PXrel	ANAPC11::CDC20
+ANAPC11	membership_PXrel	FZR1::ANAPC11
+ANAPC10	membership_PXrel	ANAPC10::CDC20
+ANAPC10	membership_PXrel	ANAPC10::FZR1
+CDK2::CCNA2	inhibition_PPrel,phosphorylation_PPrel	E2F1
+CDK2::CCNA2	inhibition_PPrel,phosphorylation_PPrel	E2F2
+CDK2::CCNA2	inhibition_PPrel,phosphorylation_PPrel	E2F3
+CDK2::CCNA2	inhibition_PPrel,phosphorylation_PPrel	CDC6
+CDK2::CCNA2	inhibition_PPrel,phosphorylation_PPrel	RB1
+ABL1	binding/association_PPrel	RB1
+E2F4::RBL1::TFDP1	repression_GErel	MYC
+ANAPC2	membership_PXrel	ANAPC2::CDC20
+ANAPC2	membership_PXrel	ANAPC2::FZR1
+E2F5::RBL1::TFDP2	repression_GErel	MYC
+RB1	dissociation_PPrel	E2F3::TFDP2
+RB1	dissociation_PPrel	E2F1::TFDP1
+RB1	dissociation_PPrel	E2F1::TFDP2
+RB1	dissociation_PPrel	E2F2::TFDP1
+RB1	dissociation_PPrel	E2F2::TFDP2
+RB1	dissociation_PPrel	E2F3::TFDP1
+ANAPC10::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+ANAPC10::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+ANAPC10::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+ORC4	membership_PXrel	ORC6::ORC3::ORC1::ORC2::ORC4::ORC5
+E2F2::TFDP1	expression_GErel	CCNE1
+E2F2::TFDP1	expression_GErel	CCNE2
+MAD2L2	membership_PXrel	MAD2L2::BUB1B::BUB3
+DBF4	membership_PXrel	DBF4::CDC7
+CDK6	membership_PXrel	CDK6::CCND1
+CDK6	membership_PXrel	CDK6::CCND2
+CDK6	membership_PXrel	CDK6::CCND3
+SMC1A	membership_PXrel	STAG1::RAD21::SMC1A::SMC3
+SMC1A	membership_PXrel	STAG2::RAD21::SMC1A::SMC3
+PCNA	inhibition_PPrel	CDK4::CCND2
+PCNA	inhibition_PPrel	CDK4::CCND3
+PCNA	inhibition_PPrel	CDK6::CCND1
+PCNA	inhibition_PPrel	CDK6::CCND2
+PCNA	inhibition_PPrel	CDK6::CCND3
+PCNA	inhibition_PPrel	CDK4::CCND1
+MYC	inhibition_PPrel	ZBTB17
+CCNB3	membership_PXrel	CCNB3::CDK1
+PTTG2	inhibition_PPrel	ESPL1
+CCNB2::CDK1	activation_PPrel,phosphorylation_PPrel	PLK1
+E2F5	membership_PXrel	E2F5::TFDP1
+E2F5	membership_PXrel	E2F5::TFDP2
+E2F5	membership_PXrel	E2F5::RBL1::TFDP1
+E2F5	membership_PXrel	E2F5::RBL1::TFDP2
+CCNA1::CDK1	activation_PPrel,phosphorylation_PPrel	RB1
+CCNB1	membership_PXrel	CCNB1::CDK1
+CDKN1A	inhibition_PPrel	CDK6::CCND3
+CDKN1A	inhibition_PPrel	CDK4::CCND1
+CDKN1A	inhibition_PPrel	CDK6::CCND1
+CDKN1A	inhibition_PPrel	CDK2::CCNE2
+CDKN1A	inhibition_PPrel	CDK4::CCND3
+CDKN1A	inhibition_PPrel	CDK4::CCND2
+CDKN1A	inhibition_PPrel	CDK2::CCNA2
+CDKN1A	inhibition_PPrel	CDK2::CCNE1
+CDKN1A	inhibition_PPrel	CDK6::CCND2
+CDKN1A	inhibition_PPrel	CDK2::CCNA1
+CDK4::CCND3	inhibition_PPrel,phosphorylation_PPrel	RBL1
+CDK4::CCND3	inhibition_PPrel,phosphorylation_PPrel	RBL2
+CDK4::CCND3	inhibition_PPrel,phosphorylation_PPrel	RB1
+BUB1	binding/association_PPrel	BUB3
+YWHAH	binding/association_PPrel	CDC25C
+YWHAH	binding/association_PPrel	CDC25B
+CCNH	membership_PXrel	CDK7::CCNH
+ANAPC2::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB3::CDK1
+ANAPC2::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB1::CDK1
+ANAPC2::FZR1	inhibition_PPrel,ubiquitination_PPrel	CCNB2::CDK1
+TFDP1	membership_PXrel	E2F1::TFDP1
+TFDP1	membership_PXrel	E2F2::TFDP1
+TFDP1	membership_PXrel	E2F3::TFDP1
+TFDP1	membership_PXrel	E2F4::RBL1::TFDP1
+TFDP1	membership_PXrel	E2F5::RBL1::TFDP1
+TFDP1	membership_PXrel	E2F4::TFDP1
+TFDP1	membership_PXrel	E2F5::TFDP1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC13::FZR1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC23
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC5
+ANAPC1::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG2
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC7
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC2::FZR1
+ANAPC1::CDC20	inhibition_PPrel,ubiquitination_PPrel	PTTG1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	CDC26::FZR1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC16
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC4::FZR1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::CDC27
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	ANAPC10::FZR1
+ANAPC1::CDC20	activation_PPrel,indirect effect_PPrel	FZR1::ANAPC11
+ANAPC13	membership_PXrel	ANAPC13::CDC20
+ANAPC13	membership_PXrel	ANAPC13::FZR1
+E2F1::TFDP2	expression_GErel	CCNE1
+E2F1::TFDP2	expression_GErel	CCNE2
+CDK1	membership_PXrel	CCNA1::CDK1
+CDK1	membership_PXrel	CCNB3::CDK1
+CDK1	membership_PXrel	CCNB1::CDK1
+CDK1	membership_PXrel	CCNB2::CDK1
+CDK1	membership_PXrel	CCNA2::CDK1
+CDK4	membership_PXrel	CDK4::CCND1
+CDK4	membership_PXrel	CDK4::CCND2
+CDK4	membership_PXrel	CDK4::CCND3
+SMAD3::SMAD4	repression_GErel	MYC
+SMAD3::SMAD4	expression_GErel	CDKN1A
+SMAD3::SMAD4	expression_GErel	CDKN2B
+ORC6::ORC3::ORC1::ORC2::ORC4::ORC5	binding/association_PPrel	MCM2::MCM3::MCM4::MCM5::MCM6::MCM7
+SMAD2::SMAD4	repression_GErel	MYC
+SMAD2::SMAD4	expression_GErel	CDKN1A
+SMAD2::SMAD4	expression_GErel	CDKN2B

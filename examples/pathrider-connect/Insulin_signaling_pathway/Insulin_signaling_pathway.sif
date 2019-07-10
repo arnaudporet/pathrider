@@ -1,0 +1,407 @@
+SOCS1	inhibition_PPrel,dephosphorylation_PPrel	INSR
+ARAF	activation_PPrel,phosphorylation_PPrel	MAP2K1
+ARAF	activation_PPrel,phosphorylation_PPrel	MAP2K2
+MKNK1	activation_PPrel,phosphorylation_PPrel	EIF4E2
+MKNK1	activation_PPrel,phosphorylation_PPrel	EIF4E
+MKNK1	activation_PPrel,phosphorylation_PPrel	EIF4E1B
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3E	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3E	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1R3E	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PIK3R2	compound_PPrel,activation_PPrel	PDPK1
+PIK3R2	compound_PPrel,activation_PPrel	MTOR
+PIK3R2	compound_PPrel,activation_PPrel	PRKCI
+PIK3R2	compound_PPrel,activation_PPrel	PRKCZ
+PRKCZ	activation_PPrel,indirect effect_PPrel	SLC2A4
+PRKCZ	indirect effect_PPrel	SREBF1
+MAPK9	inhibition_PPrel,phosphorylation_PPrel	IRS1
+MAPK9	inhibition_PPrel,phosphorylation_PPrel	IRS4
+MAPK9	inhibition_PPrel,phosphorylation_PPrel	IRS2
+CALML6	activation_PPrel,phosphorylation_PPrel	PYGM
+CALML6	activation_PPrel,phosphorylation_PPrel	PYGB
+CALML6	activation_PPrel,phosphorylation_PPrel	PYGL
+CALM2	activation_PPrel,phosphorylation_PPrel	PYGL
+CALM2	activation_PPrel,phosphorylation_PPrel	PYGM
+CALM2	activation_PPrel,phosphorylation_PPrel	PYGB
+CALML5	activation_PPrel,phosphorylation_PPrel	PYGB
+CALML5	activation_PPrel,phosphorylation_PPrel	PYGL
+CALML5	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKA1	activation_PPrel,phosphorylation_PPrel	PYGL
+PHKA1	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKA1	activation_PPrel,phosphorylation_PPrel	PYGB
+IRS2	activation_PPrel	GRB2
+IRS2	activation_PPrel	PIK3CA
+IRS2	activation_PPrel	PIK3CB
+IRS2	activation_PPrel	PIK3CD
+IRS2	activation_PPrel	PIK3R1
+IRS2	activation_PPrel	PIK3R2
+IRS2	activation_PPrel	PIK3R3
+IKBKB	inhibition_PPrel,phosphorylation_PPrel	IRS4
+IKBKB	inhibition_PPrel,phosphorylation_PPrel	IRS2
+IKBKB	inhibition_PPrel,phosphorylation_PPrel	IRS1
+SOCS3	inhibition_PPrel,dephosphorylation_PPrel	INSR
+EXOC7	binding/association_PPrel	RHOQ
+EXOC7	indirect effect_PPrel	SLC2A4
+GSK3B	inhibition_PPrel,phosphorylation_PPrel	GYS1
+GSK3B	inhibition_PPrel,phosphorylation_PPrel	GYS2
+PIK3CB	compound_PPrel,activation_PPrel	PDPK1
+PIK3CB	compound_PPrel,activation_PPrel	MTOR
+PIK3CB	compound_PPrel,activation_PPrel	PRKCI
+PIK3CB	compound_PPrel,activation_PPrel	PRKCZ
+PRKAR2A	activation_PPrel,phosphorylation_PPrel	LIPE
+PTPRF	inhibition_PPrel,dephosphorylation_PPrel	IRS2
+PTPRF	inhibition_PPrel,dephosphorylation_PPrel	INSR
+PTPRF	inhibition_PPrel,dephosphorylation_PPrel	IRS1
+PTPRF	inhibition_PPrel,dephosphorylation_PPrel	IRS4
+PRKACB	activation_PPrel,phosphorylation_PPrel	LIPE
+PHKG2	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKG2	activation_PPrel,phosphorylation_PPrel	PYGB
+PHKG2	activation_PPrel,phosphorylation_PPrel	PYGL
+SH2B2	activation_PPrel,inhibition_PPrel	CBLB
+SH2B2	activation_PPrel,inhibition_PPrel	CBL
+CRK	activation_PPrel	RHOQ
+SOCS2	inhibition_PPrel,dephosphorylation_PPrel	INSR
+TRIP10	binding/association_PPrel	RHOQ
+TRIP10	indirect effect_PPrel	SLC2A4
+PIK3CA	compound_PPrel,activation_PPrel	PRKCI
+PIK3CA	compound_PPrel,activation_PPrel	PRKCZ
+PIK3CA	compound_PPrel,activation_PPrel	PDPK1
+PIK3CA	compound_PPrel,activation_PPrel	MTOR
+TSC1	membership_PXrel	TSC1::TSC2
+PPP1R3D	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3D	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3D	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PIK3CD	compound_PPrel,activation_PPrel	PRKCZ
+PIK3CD	compound_PPrel,activation_PPrel	PDPK1
+PIK3CD	compound_PPrel,activation_PPrel	MTOR
+PIK3CD	compound_PPrel,activation_PPrel	PRKCI
+PRKACG	activation_PPrel,phosphorylation_PPrel	LIPE
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1CC	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1CC	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1CC	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PRKAG3	inhibition_PPrel,phosphorylation_PPrel	ACACB
+PRKAG3	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PHKA2	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKA2	activation_PPrel,phosphorylation_PPrel	PYGB
+PHKA2	activation_PPrel,phosphorylation_PPrel	PYGL
+GRB2	activation_PPrel	SOS1
+GRB2	activation_PPrel	SOS2
+PHKB	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKB	activation_PPrel,phosphorylation_PPrel	PYGB
+PHKB	activation_PPrel,phosphorylation_PPrel	PYGL
+CALM1	activation_PPrel,phosphorylation_PPrel	PYGM
+CALM1	activation_PPrel,phosphorylation_PPrel	PYGB
+CALM1	activation_PPrel,phosphorylation_PPrel	PYGL
+IRS4	activation_PPrel	GRB2
+IRS4	activation_PPrel	PIK3CA
+IRS4	activation_PPrel	PIK3CB
+IRS4	activation_PPrel	PIK3CD
+IRS4	activation_PPrel	PIK3R1
+IRS4	activation_PPrel	PIK3R2
+IRS4	activation_PPrel	PIK3R3
+INSR	activation_PPrel,phosphorylation_PPrel	IRS4
+INSR	activation_PPrel,phosphorylation_PPrel	SHC1
+INSR	activation_PPrel,phosphorylation_PPrel	SHC3
+INSR	activation_PPrel,phosphorylation_PPrel	IRS1
+INSR	activation_PPrel,phosphorylation_PPrel	CBLB
+INSR	activation_PPrel,phosphorylation_PPrel	SHC4
+INSR	activation_PPrel,phosphorylation_PPrel	SH2B2
+INSR	activation_PPrel,phosphorylation_PPrel	CBL
+INSR	activation_PPrel,phosphorylation_PPrel	IRS2
+INSR	activation_PPrel,phosphorylation_PPrel	SHC2
+PRKAG1	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PRKAG1	inhibition_PPrel,phosphorylation_PPrel	ACACB
+BRAF	activation_PPrel,phosphorylation_PPrel	MAP2K2
+BRAF	activation_PPrel,phosphorylation_PPrel	MAP2K1
+PTPN1	inhibition_PPrel,dephosphorylation_PPrel	IRS2
+PTPN1	inhibition_PPrel,dephosphorylation_PPrel	INSR
+PTPN1	inhibition_PPrel,dephosphorylation_PPrel	IRS1
+PTPN1	inhibition_PPrel,dephosphorylation_PPrel	IRS4
+CRKL	activation_PPrel	RHOQ
+PRKACA	activation_PPrel,phosphorylation_PPrel	LIPE
+MTOR	activation_PPrel,phosphorylation_PPrel	RPS6KB2
+MTOR	inhibition_PPrel,phosphorylation_PPrel	EIF4EBP1
+MTOR	activation_PPrel,phosphorylation_PPrel	RPS6KB1
+SOS1	activation_PPrel	HRAS
+SOS1	activation_PPrel	KRAS
+SOS1	activation_PPrel	NRAS
+MAPK10	inhibition_PPrel,phosphorylation_PPrel	IRS4
+MAPK10	inhibition_PPrel,phosphorylation_PPrel	IRS2
+MAPK10	inhibition_PPrel,phosphorylation_PPrel	IRS1
+SOS2	activation_PPrel	KRAS
+SOS2	activation_PPrel	NRAS
+SOS2	activation_PPrel	HRAS
+RAPGEF1	activation_PPrel	RHOQ
+RAPGEF1	binding/association_PPrel	CBL
+RAPGEF1	binding/association_PPrel	CBLB
+AKT2	inhibition_PPrel,phosphorylation_PPrel	GSK3B
+AKT2	indirect effect_PPrel	PPP1R3D
+AKT2	indirect effect_PPrel	PPP1R3E
+AKT2	inhibition_PPrel,phosphorylation_PPrel	BAD
+AKT2	indirect effect_PPrel	PPP1CA
+AKT2	indirect effect_PPrel	SLC2A4
+AKT2	indirect effect_PPrel	PPP1CB
+AKT2	indirect effect_PPrel	PPP1R3B
+AKT2	activation_PPrel,phosphorylation_PPrel	PDE3B
+AKT2	indirect effect_PPrel	PPP1CC
+AKT2	indirect effect_PPrel	PPP1R3C
+AKT2	activation_PPrel,phosphorylation_PPrel	MTOR
+AKT2	indirect effect_PPrel	PPP1R3A
+AKT2	indirect effect_PPrel	PPP1R3F
+AKT2	inhibition_PPrel,phosphorylation_PPrel	FOXO1
+AKT2	inhibition_PPrel,phosphorylation_PPrel	TSC2
+MAP2K1	activation_PPrel,phosphorylation_PPrel	MAPK3
+MAP2K1	activation_PPrel,phosphorylation_PPrel	MAPK1
+PRKAB2	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PRKAB2	inhibition_PPrel,phosphorylation_PPrel	ACACB
+MAPK3	activation_PPrel,phosphorylation_PPrel	ELK1
+MAPK3	activation_PPrel,phosphorylation_PPrel	MKNK2
+MAPK3	activation_PPrel,phosphorylation_PPrel	MKNK1
+SHC1	activation_PPrel	GRB2
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1CB	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1CB	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1CB	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+MAPK8	inhibition_PPrel,phosphorylation_PPrel	IRS2
+MAPK8	inhibition_PPrel,phosphorylation_PPrel	IRS1
+MAPK8	inhibition_PPrel,phosphorylation_PPrel	IRS4
+CALM3	activation_PPrel,phosphorylation_PPrel	PYGB
+CALM3	activation_PPrel,phosphorylation_PPrel	PYGL
+CALM3	activation_PPrel,phosphorylation_PPrel	PYGM
+IRS1	activation_PPrel	PIK3CB
+IRS1	activation_PPrel	PIK3CD
+IRS1	activation_PPrel	PIK3R1
+IRS1	activation_PPrel	PIK3R2
+IRS1	activation_PPrel	PIK3R3
+IRS1	activation_PPrel	GRB2
+IRS1	activation_PPrel	PIK3CA
+PIK3R3	compound_PPrel,activation_PPrel	PRKCZ
+PIK3R3	compound_PPrel,activation_PPrel	PDPK1
+PIK3R3	compound_PPrel,activation_PPrel	MTOR
+PIK3R3	compound_PPrel,activation_PPrel	PRKCI
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1R3B	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3B	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3B	activation_PPrel,dephosphorylation_PPrel	GYS1
+PRKAR1B	activation_PPrel,phosphorylation_PPrel	LIPE
+SREBF1	activation_PPrel,indirect effect_PPrel	PKLR
+SREBF1	activation_PPrel,indirect effect_PPrel	HK2
+SREBF1	activation_PPrel,indirect effect_PPrel	ACACB
+SREBF1	activation_PPrel,indirect effect_PPrel	HK3
+SREBF1	activation_PPrel,indirect effect_PPrel	HK1
+SREBF1	activation_PPrel,indirect effect_PPrel	FASN
+SREBF1	activation_PPrel,indirect effect_PPrel	HKDC1
+SREBF1	activation_PPrel,indirect effect_PPrel	ACACA
+SREBF1	activation_PPrel,indirect effect_PPrel	GCK
+RPS6KB1	activation_PPrel	RPS6
+MAPK1	activation_PPrel,phosphorylation_PPrel	ELK1
+MAPK1	activation_PPrel,phosphorylation_PPrel	MKNK2
+MAPK1	activation_PPrel,phosphorylation_PPrel	MKNK1
+PRKCI	activation_PPrel,indirect effect_PPrel	SLC2A4
+PRKCI	indirect effect_PPrel	SREBF1
+SORBS1	binding/association_PPrel	FLOT2
+SORBS1	binding/association_PPrel	FLOT1
+MKNK2	activation_PPrel,phosphorylation_PPrel	EIF4E
+MKNK2	activation_PPrel,phosphorylation_PPrel	EIF4E1B
+MKNK2	activation_PPrel,phosphorylation_PPrel	EIF4E2
+EIF4EBP1	inhibition_PPrel	EIF4E
+EIF4EBP1	inhibition_PPrel	EIF4E1B
+EIF4EBP1	inhibition_PPrel	EIF4E2
+NRAS	activation_PPrel	RAF1
+NRAS	activation_PPrel	BRAF
+NRAS	activation_PPrel	ARAF
+SHC2	activation_PPrel	GRB2
+PRKAA2	inhibition_PPrel,phosphorylation_PPrel	ACACB
+PRKAA2	inhibition_PPrel,phosphorylation_PPrel	ACACA
+SHC4	activation_PPrel	GRB2
+AKT3	indirect effect_PPrel	PPP1R3E
+AKT3	indirect effect_PPrel	PPP1R3A
+AKT3	inhibition_PPrel,phosphorylation_PPrel	FOXO1
+AKT3	activation_PPrel,phosphorylation_PPrel	MTOR
+AKT3	activation_PPrel,phosphorylation_PPrel	PDE3B
+AKT3	inhibition_PPrel,phosphorylation_PPrel	GSK3B
+AKT3	indirect effect_PPrel	SLC2A4
+AKT3	indirect effect_PPrel	PPP1R3C
+AKT3	indirect effect_PPrel	PPP1R3B
+AKT3	inhibition_PPrel,phosphorylation_PPrel	BAD
+AKT3	indirect effect_PPrel	PPP1R3F
+AKT3	inhibition_PPrel,phosphorylation_PPrel	TSC2
+AKT3	indirect effect_PPrel	PPP1CC
+AKT3	indirect effect_PPrel	PPP1R3D
+AKT3	indirect effect_PPrel	PPP1CB
+AKT3	indirect effect_PPrel	PPP1CA
+AKT1	indirect effect_PPrel	PPP1R3C
+AKT1	indirect effect_PPrel	PPP1R3E
+AKT1	indirect effect_PPrel	PPP1R3B
+AKT1	inhibition_PPrel,phosphorylation_PPrel	FOXO1
+AKT1	indirect effect_PPrel	PPP1R3A
+AKT1	activation_PPrel,phosphorylation_PPrel	MTOR
+AKT1	inhibition_PPrel,phosphorylation_PPrel	BAD
+AKT1	activation_PPrel,phosphorylation_PPrel	PDE3B
+AKT1	inhibition_PPrel,phosphorylation_PPrel	TSC2
+AKT1	indirect effect_PPrel	PPP1CA
+AKT1	indirect effect_PPrel	SLC2A4
+AKT1	indirect effect_PPrel	PPP1R3F
+AKT1	indirect effect_PPrel	PPP1CB
+AKT1	inhibition_PPrel,phosphorylation_PPrel	GSK3B
+AKT1	indirect effect_PPrel	PPP1CC
+AKT1	indirect effect_PPrel	PPP1R3D
+RAF1	activation_PPrel,phosphorylation_PPrel	MAP2K2
+RAF1	activation_PPrel,phosphorylation_PPrel	MAP2K1
+TSC1::TSC2	inhibition_PPrel	RHEB
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3C	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3C	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1R3C	activation_PPrel,dephosphorylation_PPrel	GYS2
+RPS6KB2	activation_PPrel	RPS6
+PRKAR1A	activation_PPrel,phosphorylation_PPrel	LIPE
+PRKAB1	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PRKAB1	inhibition_PPrel,phosphorylation_PPrel	ACACB
+FOXO1	expression_GErel	G6PC3
+FOXO1	expression_GErel	FBP1
+FOXO1	expression_GErel	FBP2
+FOXO1	expression_GErel	PCK1
+FOXO1	expression_GErel	PCK2
+FOXO1	dissociation_PPrel	PPARGC1A
+FOXO1	expression_GErel	G6PC
+FOXO1	expression_GErel	G6PC2
+PDPK1	activation_PPrel,phosphorylation_PPrel	AKT3
+PDPK1	activation_PPrel,phosphorylation_PPrel	AKT1
+PDPK1	activation_PPrel,phosphorylation_PPrel	AKT2
+PDPK1	activation_PPrel,phosphorylation_PPrel	RPS6KB1
+PDPK1	activation_PPrel,phosphorylation_PPrel	RPS6KB2
+PHKG1	activation_PPrel,phosphorylation_PPrel	PYGM
+PHKG1	activation_PPrel,phosphorylation_PPrel	PYGB
+PHKG1	activation_PPrel,phosphorylation_PPrel	PYGL
+HRAS	activation_PPrel	RAF1
+HRAS	activation_PPrel	BRAF
+HRAS	activation_PPrel	ARAF
+CALML3	activation_PPrel,phosphorylation_PPrel	PYGB
+CALML3	activation_PPrel,phosphorylation_PPrel	PYGL
+CALML3	activation_PPrel,phosphorylation_PPrel	PYGM
+KRAS	activation_PPrel	RAF1
+KRAS	activation_PPrel	BRAF
+KRAS	activation_PPrel	ARAF
+RHEB	activation_PPrel	MTOR
+MAP2K2	activation_PPrel,phosphorylation_PPrel	MAPK1
+MAP2K2	activation_PPrel,phosphorylation_PPrel	MAPK3
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1CA	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1CA	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1CA	activation_PPrel,dephosphorylation_PPrel	GYS2
+INS	activation_PPrel	INSR
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1R3F	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3F	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3F	activation_PPrel,dephosphorylation_PPrel	GYS2
+CALML4	activation_PPrel,phosphorylation_PPrel	PYGM
+CALML4	activation_PPrel,phosphorylation_PPrel	PYGB
+CALML4	activation_PPrel,phosphorylation_PPrel	PYGL
+PRKAG2	inhibition_PPrel,phosphorylation_PPrel	ACACB
+PRKAG2	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALML6
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALML3
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALML4
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALM1
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	PHKG1
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALML5
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	PHKB
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALM2
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	PHKA1
+PPP1R3A	activation_PPrel,dephosphorylation_PPrel	GYS1
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	PHKG2
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	CALM3
+PPP1R3A	activation_PPrel,dephosphorylation_PPrel	GYS2
+PPP1R3A	inhibition_PPrel,dephosphorylation_PPrel	PHKA2
+PIK3R1	compound_PPrel,activation_PPrel	MTOR
+PIK3R1	compound_PPrel,activation_PPrel	PRKCI
+PIK3R1	compound_PPrel,activation_PPrel	PRKCZ
+PIK3R1	compound_PPrel,activation_PPrel	PDPK1
+SHC3	activation_PPrel	GRB2
+SOCS4	inhibition_PPrel,dephosphorylation_PPrel	INSR
+PRKAA1	inhibition_PPrel,phosphorylation_PPrel	ACACA
+PRKAA1	inhibition_PPrel,phosphorylation_PPrel	ACACB
+TSC2	membership_PXrel	TSC1::TSC2
+PRKAR2B	activation_PPrel,phosphorylation_PPrel	LIPE
