@@ -1,3 +1,5 @@
+// Copyright 2019 Arnaud Poret
+// This work is licensed under the BSD 2-Clause License.
 package main
 import (
     "encoding/csv"
@@ -8,11 +10,6 @@ import (
     "path/filepath"
     "strings"
 )
-// TODO: weighted graph handling (will probably only concern shortest path finding)
-// TODO: propose to see help if bad command line?
-// TODO: verbose and quiet?
-// TODO: kgml handling?
-// TODO: biopax handling?
 //############################################################################//
 //#### MAIN ##################################################################//
 //############################################################################//
@@ -75,7 +72,7 @@ func main() {
     } else if license {
         fmt.Println(strings.Join([]string{
             "",
-            "Copyright 2017-2019 Arnaud Poret",
+            "Copyright 2019 Arnaud Poret",
             "",
             "Redistribution and use in source and binary forms, with or without modification,",
             "are permitted provided that the following conditions are met:",
