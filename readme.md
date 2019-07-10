@@ -1,6 +1,6 @@
 # Finding paths of interest in networks
 
-Copyright 2017-2019 [Arnaud Poret](https://github.com/arnaudporet)
+Copyright 2019 [Arnaud Poret](https://github.com/arnaudporet)
 
 This work is licensed under the [BSD 2-Clause License](https://raw.githubusercontent.com/arnaudporet/pathrider/master/license.txt).
 
