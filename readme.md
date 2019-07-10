@@ -68,8 +68,8 @@ pathrider <command> [options] <arguments>
 Options:
 
 * non command-specific options:
-    * `-l`/`-license`: print the BSD 2-Clause License under which pathrider is
-    * `-h`/`-help`: print help
+    * `-l/-license`: print the BSD 2-Clause License under which pathrider is
+    * `-h/-help`: print help
 * command-specific options: see `pathrider <command> -help`
 
 Commands:
@@ -108,14 +108,14 @@ Positional arguments:
 
 Options:
 
-* `-s`/`-shortest`: also find the shortest connecting paths (default: not used by default)
-* `-o`/`-out`: the output SIF file (default: `out.sif`)
-* `-h`/`-help`: print help
+* `-s/-shortest`: also find the shortest connecting paths (default: not used by default)
+* `-o/-out <file>`: the output SIF file (default: `out.sif`)
+* `-h/-help`: print help
 
-Output files (unless changed with `-o`/`-out`):
+Output files (unless changed with `-o/-out`):
 
 * `out.sif`: a SIF file encoding all the paths connecting the source nodes to the target nodes in the network
-* `out-shortest.sif`: a SIF file encoding only the shortest connecting paths (requires `-s`/`-shortest`)
+* `out-shortest.sif`: a SIF file encoding only the shortest connecting paths (requires `-s/-shortest`)
 
 Cautions:
 
@@ -146,10 +146,10 @@ Positional arguments:
 
 Options:
 
-* `-o`/`-out`: the output SIF file (default: `out.sif`)
-* `-h`/`-help`: print help
+* `-o/-out <file>`: the output SIF file (default: `out.sif`)
+* `-h/-help`: print help
 
-Output file (unless changed with `-o`/`-out`):
+Output file (unless changed with `-o/-out`):
 
 * `out.sif`: a SIF file encoding the upstream/downstream paths starting from the root nodes in the network
 
