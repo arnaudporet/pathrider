@@ -110,6 +110,7 @@ Options:
 
 * `-s/-shortest`: also find the shortest connecting paths (default: not used by default)
 * `-o/-out <file>`: the output SIF file (default: `out.sif`)
+* `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
 * `-h/-help`: print help
 
 Output files (unless changed with `-o/-out`):
@@ -147,6 +148,7 @@ Positional arguments:
 Options:
 
 * `-o/-out <file>`: the output SIF file (default: `out.sif`)
+* `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
 * `-h/-help`: print help
 
 Output file (unless changed with `-o/-out`):

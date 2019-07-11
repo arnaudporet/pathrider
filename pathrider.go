@@ -36,16 +36,13 @@ func main() {
             "",
             "pathrider currently provides 2 commands:",
             "    * connect: find the paths connecting some nodes of interest in a network",
-            "    * stream:  find the upstream/downstream paths starting from some nodes of",
-            "               interest in a network",
+            "    * stream: find the upstream/downstream paths starting from some nodes of interest in a network",
             "",
             "For command-specific help, run: pathrider <command> -help",
             "",
             "Cautions:",
-            "    * pathrider handles networks encoded in the SIF file format (see the readme",
-            "      file of pathrider)",
-            "    * pathrider does not handle multi-edges (i.e. two or more edges having the",
-            "      same source and target nodes)",
+            "    * pathrider handles networks encoded in the SIF file format (see the readme file of pathrider)",
+            "    * pathrider does not handle multi-edges (i.e. two or more edges having the same source and target nodes)",
             "    * note that duplicated edges are multi-edges",
             "    * edges are assumed to be directed",
             "",
@@ -56,13 +53,12 @@ func main() {
             "Options:",
             "    * non command-specific options:",
             "        * -l/-license: print the BSD 2-Clause License under which pathrider is",
-            "        * -h/-help:    print this help",
+            "        * -h/-help: print this help",
             "    * command-specific options: pathrider <command> -help",
             "",
             "Commands:",
             "    * connect: find the paths connecting some nodes of interest in a network",
-            "    * stream:  find the upstream/downstream paths starting from some nodes of",
-            "               interest in a network",
+            "    * stream: find the upstream/downstream paths starting from some nodes of interest in a network",
             "",
             "Arguments: see the command-specific help (pathrider <command> -help)",
             "",
@@ -74,26 +70,13 @@ func main() {
             "",
             "Copyright 2019 Arnaud Poret",
             "",
-            "Redistribution and use in source and binary forms, with or without modification,",
-            "are permitted provided that the following conditions are met:",
+            "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:",
             "",
-            "1. Redistributions of source code must retain the above copyright notice, this",
-            "   list of conditions and the following disclaimer.",
+            "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.",
             "",
-            "2. Redistributions in binary form must reproduce the above copyright notice,",
-            "   this list of conditions and the following disclaimer in the documentation",
-            "   and/or other materials provided with the distribution.",
+            "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.",
             "",
-            "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"",
-            "AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE",
-            "IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
-            "DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR",
-            "ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES",
-            "(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;",
-            "LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON",
-            "ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT",
-            "(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS",
-            "SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+            "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
             "",
         },"\n"))
     } else if len(flagSet.Args())==0 {
@@ -114,10 +97,10 @@ func main() {
 //############################################################################//
 func Connect() {
     var (
-        err error
+        err1,err2,err3 error
         help,getShortest bool
-        outFile,outFilePath,outFileBase,shortestFile string
-        args,nodes,sources,targets []string
+        outFile,outFilePath,outFileBase,shortestFile,blackFile string
+        args,nodes,sources,targets,blackNodes []string
         edges,forward,backward,intersect,allShortest [][]string
         edgeNames map[string]map[string]string
         flagSet *flag.FlagSet
@@ -130,46 +113,42 @@ func Connect() {
     flagSet.BoolVar(&getShortest,"s",false,"")
     flagSet.StringVar(&outFile,"out","out.sif","")
     flagSet.StringVar(&outFile,"o","out.sif","")
-    err=flagSet.Parse(os.Args[2:])
-    if err!=nil {
-        fmt.Println("Error: pathrider connect: "+err.Error())
+    flagSet.StringVar(&blackFile,"blacklist","","")
+    flagSet.StringVar(&blackFile,"b","","")
+    err1=flagSet.Parse(os.Args[2:])
+    if err1!=nil {
+        fmt.Println("Error: pathrider connect: "+err1.Error())
     } else if help {
         fmt.Println(strings.Join([]string{
             "",
             "Find the paths connecting some nodes of interest in a network.",
             "",
-            "Typical use is to find, in a network, the paths connecting some source nodes to",
-            "some target nodes.",
+            "Typical use is to find, in a network, the paths connecting some source nodes to some target nodes.",
             "",
             "Cautions:",
-            "    * the network must be in the SIF file format (see the readme file of",
-            "      pathrider)",
-            "    * the network must not contain multi-edges (i.e. two or more edges having",
-            "      the same source and target nodes)",
+            "    * the network must be in the SIF file format (see the readme file of pathrider)",
+            "    * the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)",
             "    * note that duplicated edges are multi-edges",
             "    * edges are assumed to be directed",
-            "    * the source and target nodes must be listed in separate files with one node",
-            "      per line",
+            "    * the source and target nodes must be listed in separate files with one node per line",
             "    * if sources = targets then provide the same node list twice",
             "",
             "Output files (unless changed with -o/-out):",
-            "    * out.sif:          a SIF file encoding all the paths connecting the source",
-            "                        nodes to the target nodes in the network",
-            "    * out-shortest.sif: a SIF file encoding only the shortest connecting paths",
-            "                        (requires -s/-shortest)",
+            "    * out.sif: a SIF file encoding all the paths connecting the source nodes to the target nodes in the network",
+            "    * out-shortest.sif: a SIF file encoding only the shortest connecting paths (requires -s/-shortest)",
             "",
             "Usage: pathrider connect [options] <networkFile> <sourceFile> <targetFile>",
             "",
             "Positional arguments:",
             "    * <networkFile>: the network encoded in a SIF file",
-            "    * <sourceFile>:  the source nodes listed in a file (one node per line)",
-            "    * <targetFile>:  the target nodes listed in a file (one node per line)",
+            "    * <sourceFile>: the source nodes listed in a file (one node per line)",
+            "    * <targetFile>: the target nodes listed in a file (one node per line)",
             "",
             "Options:",
-            "    * -s/-shortest:   also find the shortest connecting paths (default: not used",
-            "                      by default)",
+            "    * -s/-shortest: also find the shortest connecting paths (default: not used by default)",
             "    * -o/-out <file>: the output SIF file (default: out.sif)",
-            "    * -h/-help:       print this help",
+            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)",
+            "    * -h/-help: print this help",
             "",
             "For more information, see https://github.com/arnaudporet/pathrider",
             "",
@@ -181,60 +160,69 @@ func Connect() {
     } else {
         args=flagSet.Args()
         fmt.Println("reading "+args[0])
-        nodes,edges,edgeNames,err=ReadNetwork(args[0])
-        if err!=nil {
-            fmt.Println("Error: pathrider connect: "+args[0]+": "+err.Error())
-        } else if len(edges)==0 {
-            fmt.Println("Warning: pathrider connect: "+args[0]+": empty after reading")
+        nodes,edges,edgeNames,err1=ReadNetwork(args[0])
+        if err1!=nil {
+            fmt.Println("Error: pathrider connect: "+args[0]+": "+err1.Error())
         } else {
             fmt.Println("reading "+args[1])
-            sources,err=ReadNodes(args[1],nodes)
-            if err!=nil {
-                fmt.Println("Error: pathrider connect: "+args[1]+": "+err.Error())
-            } else if len(sources)==0 {
-                fmt.Println("Warning: pathrider connect: "+args[1]+": empty after reading")
-            } else {
-                fmt.Println("reading "+args[2])
-                targets,err=ReadNodes(args[2],nodes)
-                if err!=nil {
-                    fmt.Println("Error: pathrider connect: "+args[2]+": "+err.Error())
-                } else if len(targets)==0 {
-                    fmt.Println("Warning: pathrider connect: "+args[2]+": empty after reading")
+            sources,err1=ReadNodes(args[1],nodes)
+            fmt.Println("reading "+args[2])
+            targets,err2=ReadNodes(args[2],nodes)
+            if blackFile!="" {
+                fmt.Println("reading "+blackFile)
+                blackNodes,err3=ReadNodes(blackFile,nodes)
+            }
+            if err1!=nil {
+                fmt.Println("Error: pathrider connect: "+args[1]+": "+err1.Error())
+            }
+            if err2!=nil {
+                fmt.Println("Error: pathrider connect: "+args[2]+": "+err2.Error())
+            }
+            if err3!=nil {
+                fmt.Println("Error: pathrider connect: "+blackFile+": "+err3.Error())
+            }
+            if (err1==nil) && (err2==nil) && (err3==nil) {
+                if blackFile!="" {
+                    fmt.Println("applying blacklist "+blackFile)
+                    nodes,edges,edgeNames,err1=RmNodes(edges,edgeNames,blackNodes)
+                }
+                if err1!=nil {
+                    fmt.Println("Error: pathrider connect: "+blackFile+": "+err1.Error())
                 } else {
                     fmt.Println("forwarding "+args[1])
                     forward=ForwardEdges(sources,edges)
+                    fmt.Println("backwarding "+args[2])
+                    backward=BackwardEdges(targets,edges)
                     if len(forward)==0 {
                         fmt.Println("Warning: pathrider connect: "+args[1]+": no forward paths found")
-                    } else {
-                        fmt.Println("backwarding "+args[2])
-                        backward=BackwardEdges(targets,edges)
-                        if len(backward)==0 {
-                            fmt.Println("Warning: pathrider connect: "+args[2]+": no backward paths found")
+                    }
+                    if len(backward)==0 {
+                        fmt.Println("Warning: pathrider connect: "+args[2]+": no backward paths found")
+                    }
+                    if (len(forward)!=0) && (len(backward)!=0) {
+                        fmt.Println("computing connecting paths")
+                        intersect=IntersectEdges(forward,backward)
+                        if len(intersect)==0 {
+                            fmt.Println("Warning: pathrider connect: "+args[1]+" "+args[2]+": no connecting paths found")
                         } else {
-                            fmt.Println("computing connecting paths")
-                            intersect=IntersectEdges(forward,backward)
-                            if len(intersect)==0 {
-                                fmt.Println("Warning: pathrider connect: "+args[1]+" "+args[2]+": no connecting paths found")
-                            } else {
-                                fmt.Println("writing "+outFile)
-                                err=WriteNetwork(outFile,intersect,edgeNames)
-                                if err!=nil {
-                                    fmt.Println("Error: pathrider connect: "+outFile+": "+err.Error())
-                                } else if getShortest {
-                                    fmt.Println("computing shortest paths")
-                                    allShortest=AllShortestPaths(sources,targets,intersect)
-                                    if len(allShortest)==0 {
-                                        fmt.Println("Warning: pathrider connect: "+args[1]+" "+args[2]+": no shortest connecting paths found")
-                                    } else {
-                                        outFilePath,outFileBase=filepath.Split(outFile)
-                                        outFileBase=strings.TrimSuffix(outFileBase,".sif")
-                                        outFileBase+="-shortest.sif"
-                                        shortestFile=filepath.Join(outFilePath,outFileBase)
-                                        fmt.Println("writing "+shortestFile)
-                                        err=WriteNetwork(shortestFile,allShortest,edgeNames)
-                                        if err!=nil {
-                                            fmt.Println("Error: pathrider connect: "+shortestFile+": "+err.Error())
-                                        }
+                            fmt.Println("writing "+outFile)
+                            err1=WriteNetwork(outFile,intersect,edgeNames)
+                            if err1!=nil {
+                                fmt.Println("Error: pathrider connect: "+outFile+": "+err1.Error())
+                            } else if getShortest {
+                                fmt.Println("computing shortest paths")
+                                allShortest=AllShortestPaths(sources,targets,intersect)
+                                if len(allShortest)==0 {
+                                    fmt.Println("Warning: pathrider connect: "+args[1]+" "+args[2]+": no shortest connecting paths found")
+                                } else {
+                                    outFilePath,outFileBase=filepath.Split(outFile)
+                                    outFileBase=strings.TrimSuffix(outFileBase,".sif")
+                                    outFileBase+="-shortest.sif"
+                                    shortestFile=filepath.Join(outFilePath,outFileBase)
+                                    fmt.Println("writing "+shortestFile)
+                                    err1=WriteNetwork(shortestFile,allShortest,edgeNames)
+                                    if err1!=nil {
+                                        fmt.Println("Error: pathrider connect: "+shortestFile+": "+err1.Error())
                                     }
                                 }
                             }
@@ -247,10 +235,10 @@ func Connect() {
 }
 func Stream() {
     var (
-        err error
+        err1,err2 error
         help bool
-        outFile string
-        args,nodes,roots []string
+        outFile,blackFile string
+        args,nodes,roots,blackNodes []string
         edges,ward [][]string
         edgeNames map[string]map[string]string
         flagSet *flag.FlagSet
@@ -261,41 +249,39 @@ func Stream() {
     flagSet.BoolVar(&help,"h",false,"")
     flagSet.StringVar(&outFile,"out","out.sif","")
     flagSet.StringVar(&outFile,"o","out.sif","")
-    err=flagSet.Parse(os.Args[2:])
-    if err!=nil {
-        fmt.Println("Error: pathrider stream: "+err.Error())
+    flagSet.StringVar(&blackFile,"blacklist","","")
+    flagSet.StringVar(&blackFile,"b","","")
+    err1=flagSet.Parse(os.Args[2:])
+    if err1!=nil {
+        fmt.Println("Error: pathrider stream: "+err1.Error())
     } else if help {
         fmt.Println(strings.Join([]string{
             "",
-            "Find the upstream/downstream paths starting from some nodes of interest in a",
-            "network.",
+            "Find the upstream/downstream paths starting from some nodes of interest in a network.",
             "",
-            "Typical use is to find, in a network, the paths regulating some nodes (the",
-            "upstream paths) or regulated by some nodes (the downstream paths).",
+            "Typical use is to find, in a network, the paths regulating some nodes (the upstream paths) or regulated by some nodes (the downstream paths).",
             "",
             "Cautions:",
-            "    * the network must be in the SIF file format (see the readme file of",
-            "      pathrider)",
-            "    * the network must not contain multi-edges (i.e. two or more edges having",
-            "      the same source and target nodes)",
+            "    * the network must be in the SIF file format (see the readme file of pathrider)",
+            "    * the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)",
             "    * note that duplicated edges are multi-edges",
             "    * edges are assumed to be directed",
             "    * the root nodes must be listed in a file with one node per line",
             "",
             "Output file (unless changed with -o/-out):",
-            "    * out.sif: a SIF file encoding the upstream/downstream paths starting from",
-            "               the root nodes in the network",
+            "    * out.sif: a SIF file encoding the upstream/downstream paths starting from the root nodes in the network",
             "",
             "Usage: pathrider stream [options] <networkFile> <rootFile> <direction>",
             "",
             "Positional arguments:",
             "    * <networkFile>: the network encoded in a SIF file",
-            "    * <rootFile>:    the root nodes listed in a file (one node per line)",
-            "    * <direction>:   follows the up stream (up) or the down stream (down)",
+            "    * <rootFile>: the root nodes listed in a file (one node per line)",
+            "    * <direction>: follows the up stream (up) or the down stream (down)",
             "",
             "Options:",
             "    * -o/-out <file>: the output SIF file (default: out.sif)",
-            "    * -h/-help:       print this help",
+            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)",
+            "    * -h/-help: print this help",
             "",
             "For more information, see https://github.com/arnaudporet/pathrider",
             "",
@@ -309,32 +295,44 @@ func Stream() {
     } else {
         args=flagSet.Args()
         fmt.Println("reading "+args[0])
-        nodes,edges,edgeNames,err=ReadNetwork(args[0])
-        if err!=nil {
-            fmt.Println("Error: pathrider stream: "+args[0]+": "+err.Error())
-        } else if len(edges)==0 {
-            fmt.Println("Warning: pathrider stream: "+args[0]+": empty after reading")
+        nodes,edges,edgeNames,err1=ReadNetwork(args[0])
+        if err1!=nil {
+            fmt.Println("Error: pathrider stream: "+args[0]+": "+err1.Error())
         } else {
             fmt.Println("reading "+args[1])
-            roots,err=ReadNodes(args[1],nodes)
-            if err!=nil {
-                fmt.Println("Error: pathrider stream: "+args[1]+": "+err.Error())
-            } else if len(roots)==0 {
-                fmt.Println("Warning: pathrider stream: "+args[1]+": empty after reading")
-            } else {
-                fmt.Println(args[2]+"streaming "+args[1])
-                if args[2]=="down" {
-                    ward=ForwardEdges(roots,edges)
-                } else if args[2]=="up" {
-                    ward=BackwardEdges(roots,edges)
+            roots,err1=ReadNodes(args[1],nodes)
+            if blackFile!="" {
+                fmt.Println("reading "+blackFile)
+                blackNodes,err2=ReadNodes(blackFile,nodes)
+            }
+            if err1!=nil {
+                fmt.Println("Error: pathrider stream: "+args[1]+": "+err1.Error())
+            }
+            if err2!=nil {
+                fmt.Println("Error: pathrider stream: "+blackFile+": "+err2.Error())
+            }
+            if (err1==nil) && (err2==nil) {
+                if blackFile!="" {
+                    fmt.Println("applying blacklist "+blackFile)
+                    nodes,edges,edgeNames,err1=RmNodes(edges,edgeNames,blackNodes)
                 }
-                if len(ward)==0 {
-                    fmt.Println("Warning: pathrider stream: "+args[1]+": no "+args[2]+"stream paths found")
+                if err1!=nil {
+                    fmt.Println("Error: pathrider stream: "+blackFile+": "+err1.Error())
                 } else {
-                    fmt.Println("writing "+outFile)
-                    err=WriteNetwork(outFile,ward,edgeNames)
-                    if err!=nil {
-                        fmt.Println("Error: pathrider stream: "+outFile+": "+err.Error())
+                    fmt.Println(args[2]+"streaming "+args[1])
+                    if args[2]=="down" {
+                        ward=ForwardEdges(roots,edges)
+                    } else if args[2]=="up" {
+                        ward=BackwardEdges(roots,edges)
+                    }
+                    if len(ward)==0 {
+                        fmt.Println("Warning: pathrider stream: "+args[1]+": no "+args[2]+"stream paths found")
+                    } else {
+                        fmt.Println("writing "+outFile)
+                        err1=WriteNetwork(outFile,ward,edgeNames)
+                        if err1!=nil {
+                            fmt.Println("Error: pathrider stream: "+outFile+": "+err1.Error())
+                        }
                     }
                 }
             }
@@ -622,6 +620,9 @@ func ReadNetwork(networkFile string) ([]string,[][]string,map[string]map[string]
                 for _,line=range lines {
                     edgeNames[line[0]][line[2]]=line[1]
                 }
+                if len(edges)==0 {
+                    err=errors.New("empty after reading")
+                }
             }
         }
     }
@@ -654,9 +655,43 @@ func ReadNodes(nodeFile string,networkNodes []string) ([]string,error) {
                     nodes=append(nodes,line[0])
                 }
             }
+            if len(nodes)==0 {
+                err=errors.New("empty after reading")
+            }
         }
     }
     return nodes,err
+}
+func RmNodes(edges [][]string,edgeNames map[string]map[string]string,blackNodes []string) ([]string,[][]string,map[string]map[string]string,error) {
+    var (
+        err error
+        node string
+        edge,newNodes []string
+        newEdges [][]string
+        newEdgeNames map[string]map[string]string
+    )
+    newEdgeNames=make(map[string]map[string]string)
+    for _,edge=range edges {
+        if !IsInList(blackNodes,edge[0]) && !IsInList(blackNodes,edge[1]) {
+            newEdges=append(newEdges,CopyList(edge))
+        }
+    }
+    if len(newEdges)==0 {
+        err=errors.New("the network is now empty")
+    } else {
+        for _,edge=range newEdges {
+            for _,node=range edge {
+                if !IsInList(newNodes,node) {
+                    newNodes=append(newNodes,node)
+                }
+            }
+            newEdgeNames[edge[0]]=make(map[string]string)
+        }
+        for _,edge=range newEdges {
+            newEdgeNames[edge[0]][edge[1]]=edgeNames[edge[0]][edge[1]]
+        }
+    }
+    return newNodes,newEdges,newEdgeNames,err
 }
 func RmSelfLoops(edges [][]string) ([][]string,[]string) {
     var (
