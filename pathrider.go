@@ -154,7 +154,7 @@ func Connect() {
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
-        fmt.Println("Error: pathrider connect: "+outFile+": must have the .sif file extension")
+        fmt.Println("Error: pathrider connect: "+outFile+": must have the \".sif\" file extension")
     } else if len(flagSet.Args())!=3 {
         fmt.Println("Error: pathrider connect: wrong number of positional arguments, expecting: <networkFile> <sourceFile> <targetFile>")
     } else {
@@ -183,7 +183,7 @@ func Connect() {
             }
             if (err1==nil) && (err2==nil) && (err3==nil) {
                 if blackFile!="" {
-                    fmt.Println("applying blacklist "+blackFile)
+                    fmt.Println("blacklisting from "+blackFile)
                     nodes,edges,edgeNames,err1=RmNodes(edges,edgeNames,blackNodes)
                 }
                 if err1!=nil {
@@ -210,7 +210,7 @@ func Connect() {
                             if err1!=nil {
                                 fmt.Println("Error: pathrider connect: "+outFile+": "+err1.Error())
                             } else if getShortest {
-                                fmt.Println("computing shortest paths")
+                                fmt.Println("computing shortest connecting paths")
                                 allShortest=AllShortestPaths(sources,targets,intersect)
                                 if len(allShortest)==0 {
                                     fmt.Println("Warning: pathrider connect: "+args[1]+" "+args[2]+": no shortest connecting paths found")
@@ -287,7 +287,7 @@ func Stream() {
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
-        fmt.Println("Error: pathrider stream: "+outFile+": must have the .sif file extension")
+        fmt.Println("Error: pathrider stream: "+outFile+": must have the \".sif\" file extension")
     } else if len(flagSet.Args())!=3 {
         fmt.Println("Error: pathrider stream: wrong number of positional arguments, expecting: <networkFile> <rootFile> <direction>")
     } else if !IsInList([]string{"up","down"},flagSet.Arg(2)) {
@@ -313,7 +313,7 @@ func Stream() {
             }
             if (err1==nil) && (err2==nil) {
                 if blackFile!="" {
-                    fmt.Println("applying blacklist "+blackFile)
+                    fmt.Println("blacklisting from "+blackFile)
                     nodes,edges,edgeNames,err1=RmNodes(edges,edgeNames,blackNodes)
                 }
                 if err1!=nil {
@@ -677,7 +677,7 @@ func RmNodes(edges [][]string,edgeNames map[string]map[string]string,blackNodes 
         }
     }
     if len(newEdges)==0 {
-        err=errors.New("the network is now empty")
+        err=errors.New("network empty after blacklisting")
     } else {
         for _,edge=range newEdges {
             for _,node=range edge {

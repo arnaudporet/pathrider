@@ -40,19 +40,7 @@ pathrider -help
 
 Note that `go run` builds pathrider each time before running it, so building it is preferable. The built binaries can ultimately be placed somewhere in your `$PATH`.
 
-The Go package can have different names depending on your operating system. For example, with [Ubuntu](https://ubuntu.com) the Go package is named `golang`. Consequently, running a Go file with Ubuntu might be:
-
-```sh
-golang-go run yourfile.go
-```
-
-instead of:
-
-```sh
-go run yourfile.go
-```
-
-with [Arch Linux](https://www.archlinux.org).
+The Go package can have different names depending on your operating system. For example, with [Ubuntu](https://ubuntu.com) the Go package is named `golang`. Consequently, running a Go file with Ubuntu might be `golang-go run yourfile.go` instead of `go run yourfile.go` with [Arch Linux](https://www.archlinux.org).
 
 ## Usage
 
@@ -165,7 +153,7 @@ Cautions:
 
 ## Examples
 
-All the networks used in these examples are adapted from pathways coming from [KEGG Pathway](https://www.genome.jp/kegg/pathway.html).
+All the networks used in these examples are adapted from human signaling pathways coming from [KEGG Pathway](https://www.genome.jp/kegg/pathway.html).
 
 ### pathrider connect
 
@@ -198,7 +186,7 @@ All the networks used in these examples are adapted from pathways coming from [K
 
 * Cell survival
     * to illustrate the advantage of also computing the shortest connecting paths, this example is voluntarily bigger
-    * it is made of the following KEGG pathways: Apoptosis, Cell cycle, p53 signaling pathway, ErbB signaling pathway, TNF signaling pathway, TGF-beta signaling pathway, FoxO signaling pathway, Calcium signaling pathway, MAPK signaling pathway, PI3K-Akt signaling pathway and NF-kappa B signaling pathway
+    * it is made of the following human KEGG pathways: Apoptosis, Cell cycle, p53 signaling pathway, ErbB signaling pathway, TNF signaling pathway, TGF-beta signaling pathway, FoxO signaling pathway, Calcium signaling pathway, MAPK signaling pathway, PI3K-Akt signaling pathway and NF-kappa B signaling pathway
     * these pathways are involved in the cell growth/cell death balance
     * `pathrider connect -s Cell_survival.sif nodes.txt nodes.txt`
     * networkFile: some cell survival signaling pathways (11147 edges)
@@ -261,4 +249,4 @@ Most [Linux distributions](https://distrowatch.com) provide Go in their official
 * `go` (Arch Linux)
 * `golang` (Ubuntu)
 
-Otherwise, see https://golang.org/dl/
+Otherwise, see https://golang.org/dl/ or https://golang.org/doc/install
