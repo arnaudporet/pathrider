@@ -70,8 +70,7 @@ Arguments: see the command-specific help (`pathrider <command> -help`)
 Cautions:
 
 * pathrider handles networks encoded in the SIF file format (see at the end of this readme file)
-* pathrider does not handle multi-edges (i.e. two or more edges having the same source and target nodes)
-* note that duplicated edges are multi-edges
+* edge duplicates are automatically removed
 * edges are assumed to be directed
 
 For command-specific help, run: `pathrider <command> -help`
@@ -109,8 +108,7 @@ Output files (unless changed with `-o/-out`):
 Cautions:
 
 * the network must be in the SIF file format (see at the end of this readme file)
-* the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)
-* note that duplicated edges are multi-edges
+* edge duplicates are automatically removed
 * edges are assumed to be directed
 * the source and target nodes must be listed in separate files with one node per line
 * if sources = targets then provide the same node list twice
@@ -146,8 +144,7 @@ Output file (unless changed with `-o/-out`):
 Cautions:
 
 * the network must be in the SIF file format (see at the end of this readme file)
-* the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)
-* note that duplicated edges are multi-edges
+* edge duplicates are automatically removed
 * edges are assumed to be directed
 * the root nodes must be listed in a file with one node per line
 

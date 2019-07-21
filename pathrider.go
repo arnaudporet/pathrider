@@ -42,8 +42,7 @@ func main() {
             "",
             "Cautions:",
             "    * pathrider handles networks encoded in the SIF file format (see the readme file of pathrider)",
-            "    * pathrider does not handle multi-edges (i.e. two or more edges having the same source and target nodes)",
-            "    * note that duplicated edges are multi-edges",
+            "    * edge duplicates are automatically removed",
             "    * edges are assumed to be directed",
             "",
             "Usage:",
@@ -102,7 +101,7 @@ func Connect() {
         outFile,outFilePath,outFileBase,shortestFile,blackFile string
         args,nodes,sources,targets,blackNodes []string
         edges,forward,backward,intersect,allShortest [][]string
-        edgeNames map[string]map[string]string
+        edgeNames map[string]map[string][]string
         flagSet *flag.FlagSet
     )
     flagSet=flag.NewFlagSet("",flag.ContinueOnError)
@@ -127,8 +126,7 @@ func Connect() {
             "",
             "Cautions:",
             "    * the network must be in the SIF file format (see the readme file of pathrider)",
-            "    * the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)",
-            "    * note that duplicated edges are multi-edges",
+            "    * edge duplicates are automatically removed",
             "    * edges are assumed to be directed",
             "    * the source and target nodes must be listed in separate files with one node per line",
             "    * if sources = targets then provide the same node list twice",
@@ -240,7 +238,7 @@ func Stream() {
         outFile,blackFile string
         args,nodes,roots,blackNodes []string
         edges,ward [][]string
-        edgeNames map[string]map[string]string
+        edgeNames map[string]map[string][]string
         flagSet *flag.FlagSet
     )
     flagSet=flag.NewFlagSet("",flag.ContinueOnError)
@@ -263,8 +261,7 @@ func Stream() {
             "",
             "Cautions:",
             "    * the network must be in the SIF file format (see the readme file of pathrider)",
-            "    * the network must not contain multi-edges (i.e. two or more edges having the same source and target nodes)",
-            "    * note that duplicated edges are multi-edges",
+            "    * edge duplicates are automatically removed",
             "    * edges are assumed to be directed",
             "    * the root nodes must be listed in a file with one node per line",
             "",
@@ -578,17 +575,17 @@ func IsInList2(list2 [][]string,thatList []string) bool {
     }
     return false
 }
-func ReadNetwork(networkFile string) ([]string,[][]string,map[string]map[string]string,error) {
+func ReadNetwork(networkFile string) ([]string,[][]string,map[string]map[string][]string,error) {
     var (
         err error
         node string
         nodes,edge,line []string
         edges,lines [][]string
-        edgeNames map[string]map[string]string
+        edgeNames map[string]map[string][]string
         file *os.File
         reader *csv.Reader
     )
-    edgeNames=make(map[string]map[string]string)
+    edgeNames=make(map[string]map[string][]string)
     file,err=os.Open(networkFile)
     defer file.Close()
     if err==nil {
@@ -603,25 +600,26 @@ func ReadNetwork(networkFile string) ([]string,[][]string,map[string]map[string]
         if err==nil {
             for _,line=range lines {
                 edge=[]string{line[0],line[2]}
-                if IsInList2(edges,edge) {
-                    err=errors.New("multi-edges (or duplicated edges)")
-                    break
-                } else {
+                if !IsInList2(edges,edge) {
                     edges=append(edges,CopyList(edge))
-                    for _,node=range edge {
-                        if !IsInList(nodes,node) {
-                            nodes=append(nodes,node)
-                        }
+                }
+                for _,node=range edge {
+                    if !IsInList(nodes,node) {
+                        nodes=append(nodes,node)
                     }
-                    edgeNames[line[0]]=make(map[string]string)
                 }
+                edgeNames[line[0]]=make(map[string][]string)
             }
-            if err==nil {
+            if len(edges)==0 {
+                err=errors.New("empty after reading")
+            } else {
                 for _,line=range lines {
-                    edgeNames[line[0]][line[2]]=line[1]
+                    edgeNames[line[0]][line[2]]=[]string{}
                 }
-                if len(edges)==0 {
-                    err=errors.New("empty after reading")
+                for _,line=range lines {
+                    if !IsInList(edgeNames[line[0]][line[2]],line[1]) {
+                        edgeNames[line[0]][line[2]]=append(edgeNames[line[0]][line[2]],line[1])
+                    }
                 }
             }
         }
@@ -662,15 +660,15 @@ func ReadNodes(nodeFile string,networkNodes []string) ([]string,error) {
     }
     return nodes,err
 }
-func RmNodes(edges [][]string,edgeNames map[string]map[string]string,blackNodes []string) ([]string,[][]string,map[string]map[string]string,error) {
+func RmNodes(edges [][]string,edgeNames map[string]map[string][]string,blackNodes []string) ([]string,[][]string,map[string]map[string][]string,error) {
     var (
         err error
         node string
         edge,newNodes []string
         newEdges [][]string
-        newEdgeNames map[string]map[string]string
+        newEdgeNames map[string]map[string][]string
     )
-    newEdgeNames=make(map[string]map[string]string)
+    newEdgeNames=make(map[string]map[string][]string)
     for _,edge=range edges {
         if !IsInList(blackNodes,edge[0]) && !IsInList(blackNodes,edge[1]) {
             newEdges=append(newEdges,CopyList(edge))
@@ -685,10 +683,13 @@ func RmNodes(edges [][]string,edgeNames map[string]map[string]string,blackNodes 
                     newNodes=append(newNodes,node)
                 }
             }
-            newEdgeNames[edge[0]]=make(map[string]string)
+            newEdgeNames[edge[0]]=make(map[string][]string)
         }
         for _,edge=range newEdges {
-            newEdgeNames[edge[0]][edge[1]]=edgeNames[edge[0]][edge[1]]
+            newEdgeNames[edge[0]][edge[1]]=[]string{}
+        }
+        for _,edge=range newEdges {
+            newEdgeNames[edge[0]][edge[1]]=CopyList(edgeNames[edge[0]][edge[1]])
         }
     }
     return newNodes,newEdges,newEdgeNames,err
@@ -743,9 +744,10 @@ func ShortestPaths(source,target string,selfLooped []string,nodePred map[string]
         return [][]string{}
     }
 }
-func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[string]string) error {
+func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[string][]string) error {
     var (
         err error
+        name string
         edge []string
         lines [][]string
         file *os.File
@@ -755,7 +757,9 @@ func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[s
     defer file.Close()
     if err==nil {
         for _,edge=range edges {
-            lines=append(lines,[]string{edge[0],edgeNames[edge[0]][edge[1]],edge[1]})
+            for _,name=range edgeNames[edge[0]][edge[1]] {
+                lines=append(lines,[]string{edge[0],name,edge[1]})
+            }
         }
         writer=csv.NewWriter(file)
         writer.Comma='\t'
