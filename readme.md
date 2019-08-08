@@ -20,7 +20,7 @@ pathrider is implemented in [Go](https://golang.org) (see at the end of this rea
 The simplest:
 
 ```sh
-go run pathrider -help
+go run pathrider.go -help
 ```
 
 A little bit more smarter:
