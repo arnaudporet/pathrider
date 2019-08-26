@@ -17,7 +17,7 @@ func main() {
     var (
         err error
         help,license bool
-        args []string
+        command string
         flagSet *flag.FlagSet
     )
     flagSet=flag.NewFlagSet("",flag.ContinueOnError)
@@ -34,34 +34,37 @@ func main() {
             "",
             "pathrider is a tool for finding paths of interest in networks.",
             "",
-            "pathrider currently provides 2 commands:",
-            "    * connect: find the paths connecting some nodes of interest in a network",
-            "    * stream: find the upstream/downstream paths starting from some nodes of interest in a network",
-            "",
-            "For command-specific help, run: pathrider <command> -help",
-            "",
-            "Cautions:",
-            "    * pathrider handles networks encoded in the SIF file format (see the readme file of pathrider)",
-            "    * edge duplicates are automatically removed",
-            "    * edges are assumed to be directed",
+            "pathrider currently provides 2 commands (see below).",
             "",
             "Usage:",
             "    * pathrider [options]",
             "    * pathrider <command> [options] <arguments>",
             "",
+            "Commands:",
+            "    * connect: find the paths connecting some nodes of interest in a network",
+            "    * stream: find the upstream/downstream paths starting from some nodes of",
+            "              interest in a network",
+            "",
+            "Positional arguments: see the command-specific help (pathrider <command> -help)",
+            "",
             "Options:",
             "    * non command-specific options:",
             "        * -l/-license: print the BSD 2-Clause License under which pathrider is",
             "        * -h/-help: print this help",
-            "    * command-specific options: pathrider <command> -help",
+            "    * command-specific options: see the command-specific help",
+            "                                (pathrider <command> -help)",
             "",
-            "Commands:",
-            "    * connect: find the paths connecting some nodes of interest in a network",
-            "    * stream: find the upstream/downstream paths starting from some nodes of interest in a network",
+            "Output files: see the command-specific help (pathrider <command> -help)",
             "",
-            "Arguments: see the command-specific help (pathrider <command> -help)",
+            "Cautions:",
+            "    * the network must be in the SIF file format (see the readme file of",
+            "      pathrider)",
+            "    * edge duplicates are automatically removed",
+            "    * edges are assumed to be directed",
             "",
-            "For more information, see https://github.com/arnaudporet/pathrider",
+            "For command-specific help, run \"pathrider <command> -help\".",
+            "",
+            "For more information see https://github.com/arnaudporet/pathrider.",
             "",
         },"\n"))
     } else if license {
@@ -69,25 +72,38 @@ func main() {
             "",
             "Copyright 2019 Arnaud Poret",
             "",
-            "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:",
+            "Redistribution and use in source and binary forms, with or without modification,",
+            "are permitted provided that the following conditions are met:",
             "",
-            "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.",
+            "1. Redistributions of source code must retain the above copyright notice, this",
+            "   list of conditions and the following disclaimer.",
             "",
-            "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.",
+            "2. Redistributions in binary form must reproduce the above copyright notice,",
+            "   this list of conditions and the following disclaimer in the documentation",
+            "   and/or other materials provided with the distribution.",
             "",
-            "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+            "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"",
+            "AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE",
+            "IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
+            "DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR",
+            "ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES",
+            "(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;",
+            "LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON",
+            "ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT",
+            "(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS",
+            "SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
             "",
         },"\n"))
     } else if len(flagSet.Args())==0 {
         fmt.Println("Error: pathrider: missing command, expecting one of: connect, stream")
     } else {
-        args=flagSet.Args()
-        if args[0]=="connect" {
+        command=flagSet.Arg(0)
+        if command=="connect" {
             Connect()
-        } else if args[0]=="stream" {
+        } else if command=="stream" {
             Stream()
         } else {
-            fmt.Println("Error: pathrider: "+args[0]+": unknown command, expecting one of: connect, stream")
+            fmt.Println("Error: pathrider: "+command+": unknown command, expecting one of: connect, stream")
         }
     }
 }
@@ -122,18 +138,8 @@ func Connect() {
             "",
             "Find the paths connecting some nodes of interest in a network.",
             "",
-            "Typical use is to find, in a network, the paths connecting some source nodes to some target nodes.",
-            "",
-            "Cautions:",
-            "    * the network must be in the SIF file format (see the readme file of pathrider)",
-            "    * edge duplicates are automatically removed",
-            "    * edges are assumed to be directed",
-            "    * the source and target nodes must be listed in separate files with one node per line",
-            "    * if sources = targets then provide the same node list twice",
-            "",
-            "Output files (unless changed with -o/-out):",
-            "    * out.sif: a SIF file encoding all the paths connecting the source nodes to the target nodes in the network",
-            "    * out-shortest.sif: a SIF file encoding only the shortest connecting paths (requires -s/-shortest)",
+            "Typical use is to find in a network the paths connecting some source nodes to",
+            "some target nodes.",
             "",
             "Usage: pathrider connect [options] <networkFile> <sourceFile> <targetFile>",
             "",
@@ -141,20 +147,37 @@ func Connect() {
             "    * <networkFile>: the network encoded in a SIF file",
             "    * <sourceFile>: the source nodes listed in a file (one node per line)",
             "    * <targetFile>: the target nodes listed in a file (one node per line)",
+            "    * if sources = targets then provide the same node list twice",
             "",
             "Options:",
-            "    * -s/-shortest: also find the shortest connecting paths (default: not used by default)",
+            "    * -s/-shortest: also find the shortest connecting paths (default: not used",
+            "                    by default)",
+            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted",
+            "                            (one node per line), the paths containing such nodes",
+            "                            will not be considered (default: not used by",
+            "                            default)",
             "    * -o/-out <file>: the output SIF file (default: out.sif)",
-            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)",
             "    * -h/-help: print this help",
             "",
-            "For more information, see https://github.com/arnaudporet/pathrider",
+            "Output files (unless changed with -o/-out):",
+            "    * out.sif: a SIF file encoding all the paths connecting the source nodes to",
+            "               the target nodes in the network",
+            "    * out-shortest.sif: a SIF file encoding only the shortest connecting paths",
+            "                        (requires -s/-shortest)",
+            "",
+            "Cautions:",
+            "    * the network must be in the SIF file format (see the readme file of",
+            "      pathrider)",
+            "    * edge duplicates are automatically removed",
+            "    * edges are assumed to be directed",
+            "",
+            "For more information see https://github.com/arnaudporet/pathrider.",
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
         fmt.Println("Error: pathrider connect: "+outFile+": must have the \".sif\" file extension")
     } else if len(flagSet.Args())!=3 {
-        fmt.Println("Error: pathrider connect: wrong number of positional arguments, expecting: <networkFile> <sourceFile> <targetFile>")
+        fmt.Println("Error: pathrider connect: wrong number of positional arguments, expecting: <networkFile>, <sourceFile> and <targetFile>")
     } else {
         args=flagSet.Args()
         fmt.Println("reading "+args[0])
@@ -255,38 +278,44 @@ func Stream() {
     } else if help {
         fmt.Println(strings.Join([]string{
             "",
-            "Find the upstream/downstream paths starting from some nodes of interest in a network.",
+            "Find the upstream/downstream paths starting from some nodes of interest in a",
+            "network.",
             "",
-            "Typical use is to find, in a network, the paths regulating some nodes (the upstream paths) or regulated by some nodes (the downstream paths).",
-            "",
-            "Cautions:",
-            "    * the network must be in the SIF file format (see the readme file of pathrider)",
-            "    * edge duplicates are automatically removed",
-            "    * edges are assumed to be directed",
-            "    * the root nodes must be listed in a file with one node per line",
-            "",
-            "Output file (unless changed with -o/-out):",
-            "    * out.sif: a SIF file encoding the upstream/downstream paths starting from the root nodes in the network",
+            "Typical use is to find in a network the paths regulating some nodes (the",
+            "upstream paths) or regulated by some nodes (the downstream paths).",
             "",
             "Usage: pathrider stream [options] <networkFile> <rootFile> <direction>",
             "",
             "Positional arguments:",
             "    * <networkFile>: the network encoded in a SIF file",
             "    * <rootFile>: the root nodes listed in a file (one node per line)",
-            "    * <direction>: follows the up stream (up) or the down stream (down)",
+            "    * <direction>: follow the up stream (up) or the down stream (down)",
             "",
             "Options:",
+            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted",
+            "                            (one node per line), the paths containing such nodes",
+            "                            will not be considered (default: not used by",
+            "                            default)",
             "    * -o/-out <file>: the output SIF file (default: out.sif)",
-            "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)",
             "    * -h/-help: print this help",
             "",
-            "For more information, see https://github.com/arnaudporet/pathrider",
+            "Output file (unless changed with -o/-out):",
+            "    * out.sif: a SIF file encoding the upstream/downstream paths starting from",
+            "               the root nodes in the network",
+            "",
+            "Cautions:",
+            "    * the network must be in the SIF file format (see the readme file of",
+            "      pathrider)",
+            "    * edge duplicates are automatically removed",
+            "    * edges are assumed to be directed",
+            "",
+            "For more information see https://github.com/arnaudporet/pathrider.",
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
         fmt.Println("Error: pathrider stream: "+outFile+": must have the \".sif\" file extension")
     } else if len(flagSet.Args())!=3 {
-        fmt.Println("Error: pathrider stream: wrong number of positional arguments, expecting: <networkFile> <rootFile> <direction>")
+        fmt.Println("Error: pathrider stream: wrong number of positional arguments, expecting: <networkFile>, <rootFile> and <direction>")
     } else if !IsInList([]string{"up","down"},flagSet.Arg(2)) {
         fmt.Println("Error: pathrider stream: "+flagSet.Arg(2)+": unknown direction, expecting one of: up, down")
     } else {
@@ -339,6 +368,12 @@ func Stream() {
 //############################################################################//
 //#### FUNCTION ##############################################################//
 //############################################################################//
+
+// WARNING The functions below do not fully handle exceptions and errors.
+// Instead, they assume that such handling is performed upstream by the
+// top-level functions of pathrider (i.e. the pathrider commands). Consequently,
+// they should not be used as is outside of pathrider.
+
 func AllShortestPaths(sources,targets []string,edges [][]string) [][]string {
     var (
         source,target string
@@ -396,7 +431,9 @@ func BackwardEdges(roots []string,edges [][]string) [][]string {
     return backward
 }
 func CopyList(list []string) []string {
-    var y []string
+    var (
+        y []string
+    )
     y=make([]string,len(list))
     copy(y,list)
     return y
@@ -545,13 +582,18 @@ func IntersectEdges(edges1,edges2 [][]string) [][]string {
     return intersect
 }
 func IsInList(list []string,thatElement string) bool {
-    var element string
+    var (
+        found bool
+        element string
+    )
+    found=false
     for _,element=range list {
         if element==thatElement {
-            return true
+            found=true
+            break
         }
     }
-    return false
+    return found
 }
 func IsInList2(list2 [][]string,thatList []string) bool {
     var (
@@ -559,6 +601,7 @@ func IsInList2(list2 [][]string,thatList []string) bool {
         i int
         list []string
     )
+    found=false
     for _,list=range list2 {
         if len(list)==len(thatList) {
             found=true
@@ -569,11 +612,11 @@ func IsInList2(list2 [][]string,thatList []string) bool {
                 }
             }
             if found {
-                return true
+                break
             }
         }
     }
-    return false
+    return found
 }
 func ReadNetwork(networkFile string) ([]string,[][]string,map[string]map[string][]string,error) {
     var (
@@ -668,28 +711,34 @@ func RmNodes(edges [][]string,edgeNames map[string]map[string][]string,blackNode
         newEdges [][]string
         newEdgeNames map[string]map[string][]string
     )
-    newEdgeNames=make(map[string]map[string][]string)
-    for _,edge=range edges {
-        if !IsInList(blackNodes,edge[0]) && !IsInList(blackNodes,edge[1]) {
-            newEdges=append(newEdges,CopyList(edge))
-        }
-    }
-    if len(newEdges)==0 {
-        err=errors.New("network empty after blacklisting")
+    if len(edges)==0 {
+        err=errors.New("network empty before blacklisting")
+    } else if len(blackNodes)==0 {
+        err=errors.New("empty blacklist")
     } else {
-        for _,edge=range newEdges {
-            for _,node=range edge {
-                if !IsInList(newNodes,node) {
-                    newNodes=append(newNodes,node)
-                }
+        newEdgeNames=make(map[string]map[string][]string)
+        for _,edge=range edges {
+            if !IsInList(blackNodes,edge[0]) && !IsInList(blackNodes,edge[1]) {
+                newEdges=append(newEdges,CopyList(edge))
             }
-            newEdgeNames[edge[0]]=make(map[string][]string)
         }
-        for _,edge=range newEdges {
-            newEdgeNames[edge[0]][edge[1]]=[]string{}
-        }
-        for _,edge=range newEdges {
-            newEdgeNames[edge[0]][edge[1]]=CopyList(edgeNames[edge[0]][edge[1]])
+        if len(newEdges)==0 {
+            err=errors.New("network empty after blacklisting")
+        } else {
+            for _,edge=range newEdges {
+                for _,node=range edge {
+                    if !IsInList(newNodes,node) {
+                        newNodes=append(newNodes,node)
+                    }
+                }
+                newEdgeNames[edge[0]]=make(map[string][]string)
+            }
+            for _,edge=range newEdges {
+                newEdgeNames[edge[0]][edge[1]]=[]string{}
+            }
+            for _,edge=range newEdges {
+                newEdgeNames[edge[0]][edge[1]]=CopyList(edgeNames[edge[0]][edge[1]])
+            }
         }
     }
     return newNodes,newEdges,newEdgeNames,err
@@ -710,13 +759,15 @@ func RmSelfLoops(edges [][]string) ([][]string,[]string) {
 }
 func ShortestPaths(source,target string,selfLooped []string,nodePred map[string][]string,edgePred map[string]map[string][][]string) [][]string {
     var (
+        found bool
         npred string
         edge,epred []string
         newCheck,toCheck,shortest [][]string
     )
     if (source==target) && IsInList(selfLooped,source) {
-        return [][]string{[]string{source,target}}
+        shortest=append(shortest,[]string{source,target})
     } else {
+        found=false
         for _,npred=range nodePred[target] {
             shortest=append(shortest,[]string{npred,target})
             newCheck=append(newCheck,[]string{npred,target})
@@ -724,25 +775,31 @@ func ShortestPaths(source,target string,selfLooped []string,nodePred map[string]
         for {
             for _,edge=range newCheck {
                 if edge[0]==source {
-                    return shortest
+                    found=true
+                    break
                 }
             }
-            toCheck=CopyList2(newCheck)
-            newCheck=[][]string{}
-            for _,edge=range toCheck {
-                for _,epred=range edgePred[edge[0]][edge[1]] {
-                    if !IsInList2(shortest,epred) {
-                        shortest=append(shortest,CopyList(epred))
-                        newCheck=append(newCheck,CopyList(epred))
+            if found {
+                break
+            } else {
+                toCheck=CopyList2(newCheck)
+                newCheck=[][]string{}
+                for _,edge=range toCheck {
+                    for _,epred=range edgePred[edge[0]][edge[1]] {
+                        if !IsInList2(shortest,epred) {
+                            shortest=append(shortest,CopyList(epred))
+                            newCheck=append(newCheck,CopyList(epred))
+                        }
                     }
                 }
-            }
-            if len(newCheck)==0 {
-                break
+                if len(newCheck)==0 {
+                    shortest=[][]string{}
+                    break
+                }
             }
         }
-        return [][]string{}
     }
+    return shortest
 }
 func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[string][]string) error {
     var (
@@ -753,18 +810,22 @@ func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[s
         file *os.File
         writer *csv.Writer
     )
-    file,err=os.Create(networkFile)
-    defer file.Close()
-    if err==nil {
-        for _,edge=range edges {
-            for _,name=range edgeNames[edge[0]][edge[1]] {
-                lines=append(lines,[]string{edge[0],name,edge[1]})
+    if len(edges)==0 {
+        err=errors.New("empty before writing")
+    } else {
+        file,err=os.Create(networkFile)
+        defer file.Close()
+        if err==nil {
+            for _,edge=range edges {
+                for _,name=range edgeNames[edge[0]][edge[1]] {
+                    lines=append(lines,[]string{edge[0],name,edge[1]})
+                }
             }
+            writer=csv.NewWriter(file)
+            writer.Comma='\t'
+            writer.UseCRLF=false
+            err=writer.WriteAll(lines)
         }
-        writer=csv.NewWriter(file)
-        writer.Comma='\t'
-        writer.UseCRLF=false
-        err=writer.WriteAll(lines)
     }
     return err
 }

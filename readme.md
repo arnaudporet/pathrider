@@ -53,33 +53,35 @@ pathrider [options]
 pathrider <command> [options] <arguments>
 ```
 
-Options:
-
-* non command-specific options:
-    * `-l/-license`: print the BSD 2-Clause License under which pathrider is
-    * `-h/-help`: print help
-* command-specific options: see `pathrider <command> -help`
-
 Commands:
 
 * `connect`: find the paths connecting some nodes of interest in a network
 * `stream`: find the upstream/downstream paths starting from some nodes of interest in a network
 
-Arguments: see the command-specific help (`pathrider <command> -help`)
+Positional arguments: see the command-specific help (`pathrider <command> -help`)
+
+Options:
+
+* non command-specific options:
+    * `-l/-license`: print the BSD 2-Clause License under which pathrider is
+    * `-h/-help`: print help
+* command-specific options: see the command-specific help (`pathrider <command> -help`)
+
+Output files: see the command-specific help (`pathrider <command> -help`)
 
 Cautions:
 
-* pathrider handles networks encoded in the SIF file format (see at the end of this readme file)
+* the network must be in the SIF file format (see at the end of this readme file)
 * edge duplicates are automatically removed
 * edges are assumed to be directed
 
-For command-specific help, run: `pathrider <command> -help`
+For command-specific help, run `pathrider <command> -help`.
 
 ### pathrider connect
 
 Find the paths connecting some nodes of interest in a network.
 
-Typical use is to find, in a network, the paths connecting some source nodes to some target nodes.
+Typical use is to find in a network the paths connecting some source nodes to some target nodes.
 
 Usage:
 
@@ -92,12 +94,13 @@ Positional arguments:
 * `<networkFile>`: the network encoded in a SIF file
 * `<sourceFile>`: the source nodes listed in a file (one node per line)
 * `<targetFile>`: the target nodes listed in a file (one node per line)
+* if sources = targets then provide the same node list twice
 
 Options:
 
 * `-s/-shortest`: also find the shortest connecting paths (default: not used by default)
-* `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
+* `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-h/-help`: print help
 
 Output files (unless changed with `-o/-out`):
@@ -110,14 +113,12 @@ Cautions:
 * the network must be in the SIF file format (see at the end of this readme file)
 * edge duplicates are automatically removed
 * edges are assumed to be directed
-* the source and target nodes must be listed in separate files with one node per line
-* if sources = targets then provide the same node list twice
 
 ### pathrider stream
 
 Find the upstream/downstream paths starting from some nodes of interest in a network.
 
-Typical use is to find, in a network, the paths regulating some nodes (the upstream paths) or regulated by some nodes (the downstream paths).
+Typical use is to find in a network the paths regulating some nodes (the upstream paths) or regulated by some nodes (the downstream paths).
 
 Usage:
 
@@ -129,12 +130,12 @@ Positional arguments:
 
 * `<networkFile>`: the network encoded in a SIF file
 * `<rootFile>`: the root nodes listed in a file (one node per line)
-* `<direction>`: follows the up stream (`up`) or the down stream (`down`)
+* `<direction>`: follow the up stream (`up`) or the down stream (`down`)
 
 Options:
 
-* `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
+* `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-h/-help`: print help
 
 Output file (unless changed with `-o/-out`):
@@ -146,7 +147,6 @@ Cautions:
 * the network must be in the SIF file format (see at the end of this readme file)
 * edge duplicates are automatically removed
 * edges are assumed to be directed
-* the root nodes must be listed in a file with one node per line
 
 ## Examples
 
@@ -154,53 +154,58 @@ All the networks used in these examples are adapted from human signaling pathway
 
 ### pathrider connect
 
-* ErbB signaling pathway
-    * `pathrider connect -s ErbB_signaling_pathway.sif sources.txt targets.txt`
-    * networkFile: the ErbB signaling pathway (239 edges)
-    * sourceFile: contains the nodes EGFR (i.e. ERBB1), ERBB2, ERBB3 and ERBB4
-    * targetFile: contains the node MTOR
-    * results:
-        * out.sif (83 edges), also in SVG for visualization
-        * out-shortest.sif (50 edges), also in SVG for visualization
+#### ErbB signaling pathway
 
-* Insulin signaling pathway
-    * `pathrider connect -s Insulin_signaling_pathway.sif sources.txt targets.txt`
-    * networkFile: the insulin signaling pathway (407 edges)
-    * sourceFile: contains the node INSR
-    * targetFile: contains the nodes GSK3B and MAPK1
-    * results:
-        * out.sif (69 edges), also in SVG for visualization
-        * out-shortest.sif (69 edges), also in SVG for visualization
+* `pathrider connect -s ErbB_signaling_pathway.sif sources.txt targets.txt`
+* networkFile: the ErbB signaling pathway (239 edges)
+* sourceFile: contains the nodes EGFR (i.e. ERBB1), ERBB2, ERBB3 and ERBB4
+* targetFile: contains the node MTOR
+* results:
+    * out.sif (83 edges), also in SVG for visualization
+    * out-shortest.sif (50 edges), also in SVG for visualization
 
-* Cell cycle
-    * `pathrider connect -s Cell_cycle.sif nodes.txt nodes.txt`
-    * networkFile: the cell cycle (650 edges)
-    * sourceFile: contains the node RB1
-    * targetFile = sourceFile: for getting the paths connecting RB1 to itself
-    * results:
-        * out.sif (84 edges), also in SVG for visualization
-        * out-shortest.sif (22 edges), also in SVG for visualization
+#### Insulin signaling pathway
 
-* Cell survival
-    * to illustrate the advantage of also computing the shortest connecting paths, this example is voluntarily bigger
-    * it is made of the following human KEGG pathways: Apoptosis, Cell cycle, p53 signaling pathway, ErbB signaling pathway, TNF signaling pathway, TGF-beta signaling pathway, FoxO signaling pathway, Calcium signaling pathway, MAPK signaling pathway, PI3K-Akt signaling pathway and NF-kappa B signaling pathway
-    * these pathways are involved in the cell growth/cell death balance
-    * `pathrider connect -s Cell_survival.sif nodes.txt nodes.txt`
-    * networkFile: some cell survival signaling pathways (11147 edges)
-    * sourceFile: contains the nodes CASP3 (cell death effector), PIK3CA (involved in growth promoting signaling pathways) and TP53 (tumor suppressor)
-    * targetFile = sourceFile: for viewing how these biological entities interact with each other
-    * results:
-        * out.sif (819 edges), also in SVG for a quite challenging visualization
-        * out-shortest.sif (84 edges), also in SVG for an easier visualization, but only of the shortest connecting paths
+* `pathrider connect -s Insulin_signaling_pathway.sif sources.txt targets.txt`
+* networkFile: the insulin signaling pathway (407 edges)
+* sourceFile: contains the node INSR
+* targetFile: contains the nodes GSK3B and MAPK1
+* results:
+    * out.sif (69 edges), also in SVG for visualization
+    * out-shortest.sif (69 edges), also in SVG for visualization
+
+#### Cell cycle
+
+* `pathrider connect -s Cell_cycle.sif nodes.txt nodes.txt`
+* networkFile: the cell cycle (650 edges)
+* sourceFile: contains the node RB1
+* targetFile = sourceFile: for getting the paths connecting RB1 to itself
+* results:
+    * out.sif (84 edges), also in SVG for visualization
+    * out-shortest.sif (22 edges), also in SVG for visualization
+
+#### Cell survival
+
+* to illustrate the advantage of also computing the shortest connecting paths, this example is voluntarily bigger
+* it is made of the following human KEGG pathways: Apoptosis, Cell cycle, p53 signaling pathway, ErbB signaling pathway, TNF signaling pathway, TGF-beta signaling pathway, FoxO signaling pathway, Calcium signaling pathway, MAPK signaling pathway, PI3K-Akt signaling pathway and NF-kappa B signaling pathway
+* these pathways are involved in the cell growth/cell death balance
+* `pathrider connect -s Cell_survival.sif nodes.txt nodes.txt`
+* networkFile: some cell survival signaling pathways (11147 edges)
+* sourceFile: contains the nodes CASP3 (cell death effector), PIK3CA (involved in growth promoting signaling pathways) and TP53 (tumor suppressor)
+* targetFile = sourceFile: for viewing how these biological entities interact with each other
+* results:
+    * out.sif (819 edges), also in SVG for a quite challenging visualization
+    * out-shortest.sif (84 edges), also in SVG for an easier visualization, but only of the shortest connecting paths
 
 ### pathrider stream
 
-* ErbB signaling pathway
-    * `pathrider stream ErbB_signaling_pathway.sif roots.txt up`
-    * networkFile: the ErbB signaling pathway (239 edges)
-    * rootFile: contains the nodes JUN and MYC
-    * direction: upstream
-    * result: out.sif (133 edges), also in SVG for visualization
+#### ErbB signaling pathway
+
+* `pathrider stream ErbB_signaling_pathway.sif roots.txt up`
+* networkFile: the ErbB signaling pathway (239 edges)
+* rootFile: contains the nodes JUN and MYC
+* direction: upstream
+* result: out.sif (133 edges), also in SVG for visualization
 
 The ErbB signaling pathway is a growth-promoting signaling pathway typically activated by the epidermal growth factor (EGF).
 
@@ -208,12 +213,13 @@ JUN and MYC are two transcription factors influencing the expression of target g
 
 The resulting file `out.sif` converted to SVG shows the upstream paths (i.e. the regulating paths) of JUN (red) and MYC (green) in the ErbB signaling pathway. It highlights that JUN and MYC share common elements in there regulating paths (red and green) and also specific elements (red or green). Note that other regulating paths outside of the ErbB signaling pathway exist.
 
-* Toll-like receptor signaling pathway
-    * `pathrider stream Toll-like_receptor_signaling_pathway.sif roots.txt down`
-    * networkFile: the Toll-like receptor signaling pathway (219 edges)
-    * rootFile: contains the nodes TLR3 and TLR4
-    * direction: downstream
-    * result: out.sif (152 edges), also in SVG for visualization
+#### Toll-like receptor signaling pathway
+
+* `pathrider stream Toll-like_receptor_signaling_pathway.sif roots.txt down`
+* networkFile: the Toll-like receptor signaling pathway (219 edges)
+* rootFile: contains the nodes TLR3 and TLR4
+* direction: downstream
+* result: out.sif (152 edges), also in SVG for visualization
 
 The Toll-like receptors (TLRs) are cell surface receptors which can be activated by various pathogen-associated molecular patterns (PAMPs).
 
@@ -246,4 +252,4 @@ Most [Linux distributions](https://distrowatch.com) provide Go in their official
 * `go` (Arch Linux)
 * `golang` (Ubuntu)
 
-Otherwise, see https://golang.org/dl/ or https://golang.org/doc/install
+Otherwise see https://golang.org/dl/ or https://golang.org/doc/install
