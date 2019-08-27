@@ -134,13 +134,15 @@ Positional arguments:
 
 Options:
 
+* `-t/-terminal`: also find the terminal nodes, namely the nodes having no predecessors in case of upstreaming, or no successors in case of downstreaming (default: not used by default)
 * `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
 * `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-h/-help`: print help
 
-Output file (unless changed with `-o/-out`):
+Output files (unless changed with `-o/-out`):
 
 * `out.sif`: a SIF file encoding the upstream/downstream paths starting from the root nodes in the network
+* `out-terminal.txt`: a file listing the upstream/downstream terminal nodes reachable from the root nodes in the network (requires `-t/-terminal`)
 
 Cautions:
 

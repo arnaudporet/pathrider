@@ -257,9 +257,9 @@ func Connect() {
 func Stream() {
     var (
         err1,err2 error
-        help bool
-        outFile,blackFile string
-        args,nodes,roots,blackNodes []string
+        help,terminal bool
+        outFile,outFilePath,outFileBase,blackFile,termFile string
+        args,nodes,roots,blackNodes,termNodes []string
         edges,ward [][]string
         edgeNames map[string]map[string][]string
         flagSet *flag.FlagSet
@@ -270,6 +270,8 @@ func Stream() {
     flagSet.BoolVar(&help,"h",false,"")
     flagSet.StringVar(&outFile,"out","out.sif","")
     flagSet.StringVar(&outFile,"o","out.sif","")
+    flagSet.BoolVar(&terminal,"terminal",false,"")
+    flagSet.BoolVar(&terminal,"t",false,"")
     flagSet.StringVar(&blackFile,"blacklist","","")
     flagSet.StringVar(&blackFile,"b","","")
     err1=flagSet.Parse(os.Args[2:])
@@ -292,6 +294,9 @@ func Stream() {
             "    * <direction>: follow the up stream (up) or the down stream (down)",
             "",
             "Options:",
+            "    * -t/-terminal: also find the terminal nodes, namely the nodes having no",
+            "                    predecessors in case of upstreaming, or no successors in",
+            "                    case of downstreaming (default: not used by default)",
             "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted",
             "                            (one node per line), the paths containing such nodes",
             "                            will not be considered (default: not used by",
@@ -299,9 +304,12 @@ func Stream() {
             "    * -o/-out <file>: the output SIF file (default: out.sif)",
             "    * -h/-help: print this help",
             "",
-            "Output file (unless changed with -o/-out):",
+            "Output files (unless changed with -o/-out):",
             "    * out.sif: a SIF file encoding the upstream/downstream paths starting from",
             "               the root nodes in the network",
+            "    * out-terminal.txt: a file listing the upstream/downstream terminal nodes",
+            "                        reachable from the root nodes in the network",
+            "                        (requires -t/-terminal)",
             "",
             "Cautions:",
             "    * the network must be in the SIF file format (see the readme file of",
@@ -358,6 +366,22 @@ func Stream() {
                         err1=WriteNetwork(outFile,ward,edgeNames)
                         if err1!=nil {
                             fmt.Println("Error: pathrider stream: "+outFile+": "+err1.Error())
+                        } else if terminal {
+                            fmt.Println("computing "+args[2]+"stream terminal nodes from "+args[1])
+                            termNodes=TerminalNodes(ward,args[2])
+                            if len(termNodes)==0 {
+                                fmt.Println("Warning: pathrider stream: "+args[1]+": no "+args[2]+"stream terminal nodes found")
+                            } else {
+                                outFilePath,outFileBase=filepath.Split(outFile)
+                                outFileBase=strings.TrimSuffix(outFileBase,".sif")
+                                outFileBase+="-terminal.txt"
+                                termFile=filepath.Join(outFilePath,outFileBase)
+                                fmt.Println("writing "+termFile)
+                                err1=WriteNodes(termFile,termNodes)
+                                if err1!=nil {
+                                    fmt.Println("Error: pathrider stream: "+termFile+": "+err1.Error())
+                                }
+                            }
                         }
                     }
                 }
@@ -801,6 +825,24 @@ func ShortestPaths(source,target string,selfLooped []string,nodePred map[string]
     }
     return shortest
 }
+func TerminalNodes(edges [][]string,direction string) []string {
+    var (
+        node string
+        termNodes []string
+        nodeSuccPred map[string][]string
+    )
+    if direction=="up" {
+        nodeSuccPred,_=GetPredecessors(edges)
+    } else if direction=="down" {
+        nodeSuccPred,_=GetSuccessors(edges)
+    }
+    for node=range nodeSuccPred {
+        if len(nodeSuccPred[node])==0 {
+            termNodes=append(termNodes,node)
+        }
+    }
+    return termNodes
+}
 func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[string][]string) error {
     var (
         err error
@@ -825,6 +867,22 @@ func WriteNetwork(networkFile string,edges [][]string,edgeNames map[string]map[s
             writer.Comma='\t'
             writer.UseCRLF=false
             err=writer.WriteAll(lines)
+        }
+    }
+    return err
+}
+func WriteNodes(nodeFile string,nodes []string) error {
+    var (
+        err error
+        file *os.File
+    )
+    if len(nodes)==0 {
+        err=errors.New("empty before writing")
+    } else {
+        file,err=os.Create(nodeFile)
+        defer file.Close()
+        if err==nil {
+            _,err=file.WriteString(strings.Join(nodes,"\n")+"\n")
         }
     }
     return err
