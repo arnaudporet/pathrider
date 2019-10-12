@@ -1,219 +1,222 @@
-MAP2K7	phosphorylation_PPrel	MAPK9
-MAP2K7	phosphorylation_PPrel	MAPK10
-MAP2K7	phosphorylation_PPrel	MAPK8
-IRAK1	activation_PPrel,phosphorylation_PPrel	IRF7
-IRAK1	membership_PXrel	IRAK1::IRAK4
-TLR4	activation_PPrel	MYD88
-TLR4	activation_PPrel	TICAM2
-MAPK10	phosphorylation_PPrel	FOS
-MAPK10	phosphorylation_PPrel	JUN
-TLR8	binding/association_PPrel	MYD88
-STAT1	expression_GErel	CXCL9
-STAT1	expression_GErel	CXCL10
-STAT1	expression_GErel	CXCL11
-IRF7	expression_GErel	IFNA7
-IRF7	expression_GErel	IFNA4
-IRF7	expression_GErel	IFNA8
-IRF7	expression_GErel	IFNA10
-IRF7	expression_GErel	IFNA1
-IRF7	expression_GErel	IFNB1
-IRF7	expression_GErel	IFNA14
-IRF7	expression_GErel	IFNA13
-IRF7	expression_GErel	IFNA17
-IRF7	expression_GErel	IFNA21
-IRF7	expression_GErel	IFNA2
-IRF7	expression_GErel	IFNA16
-IRF7	expression_GErel	IFNA6
-IRF7	expression_GErel	IFNA5
-MAPK8	phosphorylation_PPrel	FOS
-MAPK8	phosphorylation_PPrel	JUN
-IFNAR1	activation_PPrel	STAT1
-TAB1	binding/association_PPrel	TAB2
-TAB1	binding/association_PPrel	MAP3K7
-TICAM1	activation_PPrel	TRAF3
-TICAM1	activation_PPrel	TRAF6::RIPK1
-MAPK14	activation_PPrel	JUN
-MAPK14	activation_PPrel	FOS
-PIK3CB	activation_PPrel,indirect effect_PPrel	AKT3
-PIK3CB	activation_PPrel,indirect effect_PPrel	AKT1
-PIK3CB	activation_PPrel,indirect effect_PPrel	AKT2
-MAP3K8	phosphorylation_PPrel	MAP2K1
-MAP3K8	phosphorylation_PPrel	MAP2K2
-MAP3K8	inhibition_PPrel	NFKB1
-TRAF6	activation_PPrel	MAP3K7
-TRAF6	activation_PPrel	IRF5
-TRAF6	activation_PPrel,phosphorylation_PPrel	IRF7
-TRAF6	membership_PXrel	TRAF6::RIPK1
+MYD88	membership_CPXrel	MYD88::TIRAP::TOLLIP
+MYD88	membership_CPXrel	MYD88::TIRAP
 MYD88	activation_PPrel	FADD
 MYD88	activation_PPrel	IRAK1::IRAK4
 MYD88	activation_PPrel	IRAK1
-MYD88	membership_PXrel	TIRAP::MYD88::TOLLIP
-MYD88	membership_PXrel	TIRAP::MYD88
-IKBKG	membership_PXrel	CHUK::IKBKB::IKBKG
-TLR9	activation_PPrel	MYD88
-TOLLIP	membership_PXrel	TIRAP::MYD88::TOLLIP
-RIPK1	membership_PXrel	TRAF6::RIPK1
-RIPK1	inhibition_PPrel	TRAF6
-JUN	expression_GErel	CCL5
-JUN	expression_GErel	IL12A
-JUN	expression_GErel	IL12B
-JUN	expression_GErel	CCL3
-JUN	expression_GErel	IL6
-JUN	expression_GErel	CCL3L3
-JUN	expression_GErel	CCL3L1
-JUN	expression_GErel	CXCL8
-JUN	expression_GErel	CCL4
-JUN	expression_GErel	CCL4L2
-JUN	expression_GErel	TNF
-JUN	expression_GErel	CCL4L1
-JUN	expression_GErel	IL1B
-PIK3CD	activation_PPrel,indirect effect_PPrel	AKT1
-PIK3CD	activation_PPrel,indirect effect_PPrel	AKT2
-PIK3CD	activation_PPrel,indirect effect_PPrel	AKT3
-MAP2K1	phosphorylation_PPrel	MAPK1
-MAP2K1	phosphorylation_PPrel	MAPK3
-TLR7	binding/association_PPrel	MYD88
-IRAK1::IRAK4	activation_PPrel	TRAF6
-TRAF6::RIPK1	activation_PPrel	MAP3K7
-MAPK9	phosphorylation_PPrel	JUN
-MAPK9	phosphorylation_PPrel	FOS
-IRAK4	membership_PXrel	IRAK1::IRAK4
+TIRAP	membership_CPXrel	MYD88::TIRAP::TOLLIP
+TIRAP	membership_CPXrel	MYD88::TIRAP
+TOLLIP	membership_CPXrel	MYD88::TIRAP::TOLLIP
+IRAK1	membership_CPXrel	IRAK1::IRAK4
+IRAK1	activation_PPrel,phosphorylation_PPrel	IRF7
+IRAK4	membership_CPXrel	IRAK1::IRAK4
 IRAK4	binding/association_PPrel	TRAF6
 IRAK4	activation_PPrel,phosphorylation_PPrel	IRAK1
-MAP2K3	phosphorylation_PPrel	MAPK14
-MAP2K3	phosphorylation_PPrel	MAPK11
-MAP2K3	phosphorylation_PPrel	MAPK13
-MAP2K3	phosphorylation_PPrel	MAPK12
-MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K7
-MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K4
-MAP3K7	activation_PPrel,phosphorylation_PPrel	IKBKB
-MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K3
-MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K6
-IFNB1	activation_PPrel	IFNAR2
-IFNB1	activation_PPrel	IFNAR1
-RAC1	activation_PPrel	PIK3R2
-RAC1	activation_PPrel	PIK3R3
-RAC1	activation_PPrel	PIK3CA
-RAC1	activation_PPrel	PIK3CB
-RAC1	activation_PPrel	PIK3CD
-RAC1	activation_PPrel	PIK3R1
-IKBKE	membership_PXrel	TBK1::IKBKE
-MAP2K2	phosphorylation_PPrel	MAPK3
-MAP2K2	phosphorylation_PPrel	MAPK1
-TLR2	activation_PPrel	TIRAP::MYD88::TOLLIP
-TLR2	activation_PPrel	RAC1
-IFNAR2	activation_PPrel	STAT1
-TRAF3	activation_PPrel	TBK1::IKBKE
-TLR6	binding/association_PPrel	TLR2
-MAP2K4	phosphorylation_PPrel	MAPK8
-MAP2K4	phosphorylation_PPrel	MAPK9
-MAP2K4	phosphorylation_PPrel	MAPK10
-AKT3	activation_PPrel,indirect effect_PPrel	NFKB1
-AKT3	activation_PPrel,indirect effect_PPrel	RELA
-TBK1	membership_PXrel	TBK1::IKBKE
-TICAM2	activation_PPrel	TICAM1
-MAPK1	activation_PPrel	JUN
-MAPK1	activation_PPrel	FOS
-NFKB1	expression_GErel	CCL4L1
-NFKB1	expression_GErel	IL6
-NFKB1	expression_GErel	IL12B
-NFKB1	expression_GErel	IL12A
-NFKB1	expression_GErel	IL1B
-NFKB1	expression_GErel	CCL3L1
-NFKB1	expression_GErel	TNF
-NFKB1	expression_GErel	CXCL8
-NFKB1	expression_GErel	CCL4L2
-NFKB1	expression_GErel	CCL3
-NFKB1	expression_GErel	CCL5
-NFKB1	expression_GErel	CCL4
-NFKB1	expression_GErel	CCL3L3
+IKBKE	membership_CPXrel	IKBKE::TBK1
+TBK1	membership_CPXrel	IKBKE::TBK1
+RIPK1	membership_CPXrel	RIPK1::TRAF6
+RIPK1	inhibition_PPrel	TRAF6
+TRAF6	membership_CPXrel	RIPK1::TRAF6
+TRAF6	activation_PPrel	MAP3K7
+TRAF6	activation_PPrel	IRF5
+TRAF6	activation_PPrel,phosphorylation_PPrel	IRF7
+CHUK	membership_CPXrel	CHUK::IKBKB::IKBKG
+CHUK	phosphorylation_PPrel	IRF7
+IKBKB	membership_CPXrel	CHUK::IKBKB::IKBKG
+IKBKB	phosphorylation_PPrel	NFKBIA
+IKBKG	membership_CPXrel	CHUK::IKBKB::IKBKG
+IRF5	expression_GErel	TNF
+IRF5	expression_GErel	IL1B
+IRF5	expression_GErel	IL6
+IRF5	expression_GErel	IL12A
+IRF5	expression_GErel	IL12B
+IRF5	expression_GErel	CXCL8
+IRF5	expression_GErel	CCL5
+IRF5	expression_GErel	CCL3L3
+IRF5	expression_GErel	CCL3
+IRF5	expression_GErel	CCL3L1
+IRF5	unknown_PPrel	CCL4L1
+IRF5	unknown_PPrel	CCL4
+IRF5	unknown_PPrel	CCL4L2
+IRF7	expression_GErel	IFNA1
+IRF7	expression_GErel	IFNA2
+IRF7	expression_GErel	IFNA4
+IRF7	expression_GErel	IFNA5
+IRF7	expression_GErel	IFNA6
+IRF7	expression_GErel	IFNA7
+IRF7	expression_GErel	IFNA8
+IRF7	expression_GErel	IFNA10
+IRF7	expression_GErel	IFNA13
+IRF7	expression_GErel	IFNA14
+IRF7	expression_GErel	IFNA16
+IRF7	expression_GErel	IFNA17
+IRF7	expression_GErel	IFNA21
+IRF7	expression_GErel	IFNB1
+IRF3	expression_GErel	CD40
 IRF3	expression_GErel	CD80
 IRF3	expression_GErel	CD86
 IRF3	expression_GErel	IFNB1
 IRF3	expression_GErel	CXCL10
 IRF3	expression_GErel	CXCL11
 IRF3	expression_GErel	CXCL9
-IRF3	expression_GErel	CD40
-TBK1::IKBKE	activation_PPrel,phosphorylation_PPrel	IRF7
-TBK1::IKBKE	activation_PPrel,phosphorylation_PPrel	IRF3
+STAT1	expression_GErel	CXCL10
+STAT1	expression_GErel	CXCL11
+STAT1	expression_GErel	CXCL9
+TLR2	activation_PPrel	RAC1
+TLR2	activation_PPrel	MYD88::TIRAP::TOLLIP
+FADD	activation_PPrel	CASP8
+CD14	activation_PPrel	TLR4
+TLR4	activation_PPrel	MYD88
+TLR4	activation_PPrel	TICAM2
+MYD88::TIRAP	activation_PPrel	TRAF6
+TICAM2	activation_PPrel	TICAM1
+TLR5	activation_PPrel	MYD88
+IRAK1::IRAK4	activation_PPrel	TRAF6
+TLR9	activation_PPrel	MYD88
+TLR3	activation_PPrel	TICAM1
+TICAM1	activation_PPrel	TRAF3
+TICAM1	activation_PPrel	RIPK1::TRAF6
+TRAF3	activation_PPrel	IKBKE::TBK1
+RIPK1::TRAF6	activation_PPrel	MAP3K7
+CHUK::IKBKB::IKBKG	activation_PPrel	NFKB1
+IKBKE::TBK1	activation_PPrel,phosphorylation_PPrel	IRF7
+IKBKE::TBK1	activation_PPrel,phosphorylation_PPrel	IRF3
+TLR1	binding/association_PPrel	TLR2
+TLR6	binding/association_PPrel	TLR2
+LY96	binding/association_PPrel	TLR4
+NFKBIA	inhibition_PPrel	NFKB1
+NFKBIA	inhibition_PPrel	RELA
+TLR7	binding/association_PPrel	MYD88
+TLR8	binding/association_PPrel	MYD88
+TAB1	binding/association_PPrel	TAB2
+TAB1	binding/association_PPrel	MAP3K7
+MAP3K8	inhibition_PPrel	NFKB1
+MAP3K8	phosphorylation_PPrel	MAP2K1
+MAP3K8	phosphorylation_PPrel	MAP2K2
+MAP2K1	phosphorylation_PPrel	MAPK1
+MAP2K1	phosphorylation_PPrel	MAPK3
+MAP2K2	phosphorylation_PPrel	MAPK1
+MAP2K2	phosphorylation_PPrel	MAPK3
+MAP2K3	phosphorylation_PPrel	MAPK14
+MAP2K3	phosphorylation_PPrel	MAPK11
+MAP2K3	phosphorylation_PPrel	MAPK13
+MAP2K3	phosphorylation_PPrel	MAPK12
+MAP2K6	phosphorylation_PPrel	MAPK14
+MAP2K6	phosphorylation_PPrel	MAPK11
+MAP2K6	phosphorylation_PPrel	MAPK13
+MAP2K6	phosphorylation_PPrel	MAPK12
+MAP2K7	phosphorylation_PPrel	MAPK8
+MAP2K7	phosphorylation_PPrel	MAPK9
+MAP2K7	phosphorylation_PPrel	MAPK10
+MAP2K4	phosphorylation_PPrel	MAPK8
+MAP2K4	phosphorylation_PPrel	MAPK9
+MAP2K4	phosphorylation_PPrel	MAPK10
+MAPK8	phosphorylation_PPrel	FOS
+MAPK8	phosphorylation_PPrel	JUN
+MAPK9	phosphorylation_PPrel	FOS
+MAPK9	phosphorylation_PPrel	JUN
+MAPK10	phosphorylation_PPrel	FOS
+MAPK10	phosphorylation_PPrel	JUN
+RAC1	activation_PPrel	PIK3CA
+RAC1	activation_PPrel	PIK3CB
+RAC1	activation_PPrel	PIK3CD
+RAC1	activation_PPrel	PIK3R1
+RAC1	activation_PPrel	PIK3R2
+RAC1	activation_PPrel	PIK3R3
+IFNB1	activation_PPrel	IFNAR1
+IFNB1	activation_PPrel	IFNAR2
+IFNAR1	activation_PPrel	STAT1
+IFNAR2	activation_PPrel	STAT1
+SPP1	activation_PPrel	IRF7
+MAPK14	activation_PPrel	FOS
+MAPK14	activation_PPrel	JUN
+MAPK11	activation_PPrel	FOS
+MAPK11	activation_PPrel	JUN
+MAPK13	activation_PPrel	FOS
+MAPK13	activation_PPrel	JUN
+MAPK12	activation_PPrel	FOS
+MAPK12	activation_PPrel	JUN
+MAPK1	activation_PPrel	FOS
+MAPK1	activation_PPrel	JUN
+MAPK3	activation_PPrel	FOS
+MAPK3	activation_PPrel	JUN
+FOS	expression_GErel	TNF
+FOS	expression_GErel	IL1B
+FOS	expression_GErel	IL6
+FOS	expression_GErel	IL12A
+FOS	expression_GErel	IL12B
+FOS	expression_GErel	CXCL8
+FOS	expression_GErel	CCL5
+FOS	expression_GErel	CCL3L3
+FOS	expression_GErel	CCL3
+FOS	expression_GErel	CCL3L1
+FOS	expression_GErel	CCL4L1
+FOS	expression_GErel	CCL4
+FOS	expression_GErel	CCL4L2
+JUN	expression_GErel	TNF
+JUN	expression_GErel	IL1B
+JUN	expression_GErel	IL6
+JUN	expression_GErel	IL12A
+JUN	expression_GErel	IL12B
+JUN	expression_GErel	CXCL8
+JUN	expression_GErel	CCL5
+JUN	expression_GErel	CCL3L3
+JUN	expression_GErel	CCL3
+JUN	expression_GErel	CCL3L1
+JUN	expression_GErel	CCL4L1
+JUN	expression_GErel	CCL4
+JUN	expression_GErel	CCL4L2
+NFKB1	expression_GErel	TNF
+NFKB1	expression_GErel	IL1B
+NFKB1	expression_GErel	IL6
+NFKB1	expression_GErel	IL12A
+NFKB1	expression_GErel	IL12B
+NFKB1	expression_GErel	CXCL8
+NFKB1	expression_GErel	CCL5
+NFKB1	expression_GErel	CCL3L3
+NFKB1	expression_GErel	CCL3
+NFKB1	expression_GErel	CCL3L1
+NFKB1	expression_GErel	CCL4L1
+NFKB1	expression_GErel	CCL4
+NFKB1	expression_GErel	CCL4L2
+RELA	expression_GErel	TNF
+RELA	expression_GErel	IL1B
+RELA	expression_GErel	IL6
+RELA	expression_GErel	IL12A
+RELA	expression_GErel	IL12B
+RELA	expression_GErel	CXCL8
+RELA	expression_GErel	CCL5
+RELA	expression_GErel	CCL3L3
+RELA	expression_GErel	CCL3
+RELA	expression_GErel	CCL3L1
+RELA	expression_GErel	CCL4L1
+RELA	expression_GErel	CCL4
+RELA	expression_GErel	CCL4L2
+MAP3K7	activation_PPrel,phosphorylation_PPrel	IKBKB
+MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K3
+MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K6
+MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K7
+MAP3K7	activation_PPrel,phosphorylation_PPrel	MAP2K4
+PIK3CA	activation_PPrel,indirect effect_PPrel	AKT3
+PIK3CA	activation_PPrel,indirect effect_PPrel	AKT1
+PIK3CA	activation_PPrel,indirect effect_PPrel	AKT2
+PIK3CB	activation_PPrel,indirect effect_PPrel	AKT3
+PIK3CB	activation_PPrel,indirect effect_PPrel	AKT1
+PIK3CB	activation_PPrel,indirect effect_PPrel	AKT2
+PIK3CD	activation_PPrel,indirect effect_PPrel	AKT3
+PIK3CD	activation_PPrel,indirect effect_PPrel	AKT1
+PIK3CD	activation_PPrel,indirect effect_PPrel	AKT2
+PIK3R1	activation_PPrel,indirect effect_PPrel	AKT3
+PIK3R1	activation_PPrel,indirect effect_PPrel	AKT1
+PIK3R1	activation_PPrel,indirect effect_PPrel	AKT2
 PIK3R2	activation_PPrel,indirect effect_PPrel	AKT3
 PIK3R2	activation_PPrel,indirect effect_PPrel	AKT1
 PIK3R2	activation_PPrel,indirect effect_PPrel	AKT2
-MAPK13	activation_PPrel	JUN
-MAPK13	activation_PPrel	FOS
-MAPK12	activation_PPrel	FOS
-MAPK12	activation_PPrel	JUN
-TLR1	binding/association_PPrel	TLR2
-TIRAP	membership_PXrel	TIRAP::MYD88
-TIRAP	membership_PXrel	TIRAP::MYD88::TOLLIP
-LY96	binding/association_PPrel	TLR4
-RELA	expression_GErel	CCL4L2
-RELA	expression_GErel	CCL3L3
-RELA	expression_GErel	CCL4L1
-RELA	expression_GErel	IL6
-RELA	expression_GErel	TNF
-RELA	expression_GErel	CXCL8
-RELA	expression_GErel	IL1B
-RELA	expression_GErel	CCL5
-RELA	expression_GErel	IL12B
-RELA	expression_GErel	CCL3L1
-RELA	expression_GErel	CCL4
-RELA	expression_GErel	CCL3
-RELA	expression_GErel	IL12A
-TIRAP::MYD88	activation_PPrel	TRAF6
-SPP1	activation_PPrel	IRF7
-TLR5	activation_PPrel	MYD88
-PIK3R1	activation_PPrel,indirect effect_PPrel	AKT1
-PIK3R1	activation_PPrel,indirect effect_PPrel	AKT2
-PIK3R1	activation_PPrel,indirect effect_PPrel	AKT3
-MAPK3	activation_PPrel	FOS
-MAPK3	activation_PPrel	JUN
-CHUK::IKBKB::IKBKG	activation_PPrel	NFKB1
-PIK3CA	activation_PPrel,indirect effect_PPrel	AKT2
-PIK3CA	activation_PPrel,indirect effect_PPrel	AKT3
-PIK3CA	activation_PPrel,indirect effect_PPrel	AKT1
-FOS	expression_GErel	CCL3L1
-FOS	expression_GErel	IL1B
-FOS	expression_GErel	CCL4
-FOS	expression_GErel	CCL3L3
-FOS	expression_GErel	CCL5
-FOS	expression_GErel	CXCL8
-FOS	expression_GErel	CCL4L1
-FOS	expression_GErel	IL12B
-FOS	expression_GErel	TNF
-FOS	expression_GErel	CCL3
-FOS	expression_GErel	CCL4L2
-FOS	expression_GErel	IL6
-FOS	expression_GErel	IL12A
-IRF5	expression_GErel	CCL5
-IRF5	expression_GErel	IL12B
-IRF5	expression_GErel	CCL3L3
-IRF5	expression_GErel	CXCL8
-IRF5	expression_GErel	IL12A
-IRF5	expression_GErel	CCL3L1
-IRF5	expression_GErel	IL6
-IRF5	expression_GErel	TNF
-IRF5	expression_GErel	IL1B
-IRF5	expression_GErel	CCL3
-TLR3	activation_PPrel	TICAM1
-FADD	activation_PPrel	CASP8
-AKT2	activation_PPrel,indirect effect_PPrel	NFKB1
-AKT2	activation_PPrel,indirect effect_PPrel	RELA
-MAP2K6	phosphorylation_PPrel	MAPK13
-MAP2K6	phosphorylation_PPrel	MAPK12
-MAP2K6	phosphorylation_PPrel	MAPK14
-MAP2K6	phosphorylation_PPrel	MAPK11
-CD14	activation_PPrel	TLR4
-AKT1	activation_PPrel,indirect effect_PPrel	NFKB1
-AKT1	activation_PPrel,indirect effect_PPrel	RELA
-PIK3R3	activation_PPrel,indirect effect_PPrel	AKT2
 PIK3R3	activation_PPrel,indirect effect_PPrel	AKT3
 PIK3R3	activation_PPrel,indirect effect_PPrel	AKT1
-CHUK	phosphorylation_PPrel	IRF7
-CHUK	membership_PXrel	CHUK::IKBKB::IKBKG
-IKBKB	membership_PXrel	CHUK::IKBKB::IKBKG
-IKBKB	phosphorylation_PPrel	NFKBIA
-NFKBIA	inhibition_PPrel	RELA
-NFKBIA	inhibition_PPrel	NFKB1
-MAPK11	activation_PPrel	FOS
-MAPK11	activation_PPrel	JUN
+PIK3R3	activation_PPrel,indirect effect_PPrel	AKT2
+AKT3	activation_PPrel,indirect effect_PPrel	NFKB1
+AKT3	activation_PPrel,indirect effect_PPrel	RELA
+AKT1	activation_PPrel,indirect effect_PPrel	NFKB1
+AKT1	activation_PPrel,indirect effect_PPrel	RELA
+AKT2	activation_PPrel,indirect effect_PPrel	NFKB1
+AKT2	activation_PPrel,indirect effect_PPrel	RELA
