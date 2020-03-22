@@ -1,4 +1,4 @@
-// Copyright (C) 2019 Arnaud Poret
+// Copyright (C) 2019-2020 Arnaud Poret
 // This work is licensed under the GNU General Public License.
 // To view a copy of this license, visit https://www.gnu.org/licenses/gpl.html.
 package main
@@ -73,7 +73,7 @@ func main() {
         fmt.Println(strings.Join([]string{
             "",
             "pathrider: a tool for finding paths of interest in networks.",
-            "Copyright (C) 2019 Arnaud Poret",
+            "Copyright (C) 2019-2020 Arnaud Poret",
             "",
             "This program is free software: you can redistribute it and/or modify it under",
             "the terms of the GNU General Public License as published by the Free Software",

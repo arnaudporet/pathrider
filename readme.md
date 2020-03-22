@@ -1,6 +1,6 @@
 # Finding paths of interest in networks
 
-Copyright 2019 [Arnaud Poret](https://github.com/arnaudporet)
+Copyright 2019-2020 [Arnaud Poret](https://github.com/arnaudporet)
 
 This work is licensed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
