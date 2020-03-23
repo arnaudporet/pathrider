@@ -116,6 +116,7 @@ Positional arguments:
 Options:
 
 * `-t/-terminal`: also find the terminal nodes reachable from the seed nodes, namely the nodes having no predecessors in case of upstreaming, or the nodes having no successors in case of downstreaming (default: not used by default)
+* `-d/-depth <int>`: the maximal depth when up/down streaming from the seed nodes (default: not used by default)
 * `-b/-blacklist <file>`: a file containing a list of nodes to be blacklisted (one node per line), the paths containing such nodes will not be considered (default: not used by default)
 * `-o/-out <file>`: the output SIF file (default: `out.sif`)
 * `-u/-usage`: print usage only

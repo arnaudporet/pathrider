@@ -5,6 +5,7 @@ package main
 import (
     "flag"
     "fmt"
+    "math"
     "os"
     "path/filepath"
     "strings"
@@ -108,7 +109,7 @@ func Connect() {
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
-        fmt.Println("Error: pathrider connect: "+outFile+": must have the \".sif\" file extension")
+        fmt.Println("Error: pathrider connect: "+outFile+": the output SIF file must have the \".sif\" file extension")
     } else if len(flagSet.Args())!=3 {
         fmt.Println("Error: pathrider connect: wrong number of positional arguments, expecting: <networkFile> <sourceFile> <targetFile>")
     } else {
@@ -145,10 +146,10 @@ func Connect() {
                 if (err1==nil) && (err2==nil) {
                     fmt.Println("forwarding source nodes")
                     nodeSucc,edgeSucc=GetSuccessors(edges)
-                    forward=ForwardEdges(sources,nodeSucc,edgeSucc)
+                    forward=ForwardEdges(sources,nodeSucc,edgeSucc,math.NaN())
                     fmt.Println("backwarding target nodes")
                     nodePred,edgePred=GetPredecessors(edges)
-                    backward=BackwardEdges(targets,nodePred,edgePred)
+                    backward=BackwardEdges(targets,nodePred,edgePred,math.NaN())
                     if len(forward)==0 {
                         fmt.Println("Warning: pathrider connect: "+args[1]+": no forward paths found")
                     }

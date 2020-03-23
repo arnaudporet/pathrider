@@ -39,19 +39,22 @@ func AllShortestPaths(sources,targets,selfLooped []string,nodeSucc map[string][]
     }
     return allShortest
 }
-func BackwardEdges(seeds []string,nodePred map[string][]string,edgePred map[string]map[string][][]string) [][]string {
+func BackwardEdges(seeds []string,nodePred map[string][]string,edgePred map[string]map[string][][]string,depth float64) [][]string {
     var (
+        d float64
         seed,npred string
         edge,epred []string
         backward,newCheck,toCheck [][]string
     )
+    d=1
     for _,seed=range seeds {
         for _,npred=range nodePred[seed] {
             backward=append(backward,[]string{npred,seed})
             newCheck=append(newCheck,[]string{npred,seed})
         }
     }
-    for {
+    for (len(newCheck)!=0) && (d!=depth) {
+        d+=1
         toCheck=CopyList2(newCheck)
         newCheck=[][]string{}
         for _,edge=range toCheck {
@@ -62,25 +65,25 @@ func BackwardEdges(seeds []string,nodePred map[string][]string,edgePred map[stri
                 }
             }
         }
-        if len(newCheck)==0 {
-            break
-        }
     }
     return backward
 }
-func ForwardEdges(seeds []string,nodeSucc map[string][]string,edgeSucc map[string]map[string][][]string) [][]string {
+func ForwardEdges(seeds []string,nodeSucc map[string][]string,edgeSucc map[string]map[string][][]string,depth float64) [][]string {
     var (
+        d float64
         seed,nsucc string
         edge,esucc []string
         forward,newCheck,toCheck [][]string
     )
+    d=1
     for _,seed=range seeds {
         for _,nsucc=range nodeSucc[seed] {
             forward=append(forward,[]string{seed,nsucc})
             newCheck=append(newCheck,[]string{seed,nsucc})
         }
     }
-    for {
+    for (len(newCheck)!=0) && (d!=depth) {
+        d+=1
         toCheck=CopyList2(newCheck)
         newCheck=[][]string{}
         for _,edge=range toCheck {
@@ -90,9 +93,6 @@ func ForwardEdges(seeds []string,nodeSucc map[string][]string,edgeSucc map[strin
                     newCheck=append(newCheck,CopyList(esucc))
                 }
             }
-        }
-        if len(newCheck)==0 {
-            break
         }
     }
     return forward
@@ -107,7 +107,7 @@ func GetLayers(seed string,nodeSucc map[string][]string,edgeSucc map[string]map[
         newLayer=append(newLayer,[]string{seed,nsucc})
         edges=append(edges,[]string{seed,nsucc})
     }
-    for {
+    for len(newLayer)!=0 {
         for _,edge=range newLayer {
             visited=append(visited,edge[1])
         }
@@ -120,9 +120,6 @@ func GetLayers(seed string,nodeSucc map[string][]string,edgeSucc map[string]map[
                     edges=append(edges,CopyList(esucc))
                 }
             }
-        }
-        if len(newLayer)==0 {
-            break
         }
     }
     return edges
@@ -343,16 +340,14 @@ func ShortestPaths(source,target string,nodePred map[string][]string,edgePred ma
         shortest=append(shortest,[]string{npred,target})
         newCheck=append(newCheck,[]string{npred,target})
     }
-    for {
+    for (len(newCheck)!=0) && !found {
         for _,edge=range newCheck {
             if edge[0]==source {
                 found=true
                 break
             }
         }
-        if found {
-            break
-        } else {
+        if !found {
             toCheck=CopyList2(newCheck)
             newCheck=[][]string{}
             for _,edge=range toCheck {
@@ -363,11 +358,10 @@ func ShortestPaths(source,target string,nodePred map[string][]string,edgePred ma
                     }
                 }
             }
-            if len(newCheck)==0 {
-                shortest=[][]string{}
-                break
-            }
         }
+    }
+    if !found {
+        shortest=[][]string{}
     }
     return shortest
 }

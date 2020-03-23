@@ -5,6 +5,7 @@ package main
 import (
     "flag"
     "fmt"
+    "math"
     "os"
     "path/filepath"
     "strings"
@@ -13,6 +14,7 @@ func Stream() {
     var (
         err error
         help,usage,getTerminal bool
+        depth float64
         outFile,outFilePath,outFileBase,blackFile string
         args,nodes,blackNodes,seeds,termNodes []string
         edges,ward [][]string
@@ -33,6 +35,8 @@ func Stream() {
     flagSet.BoolVar(&getTerminal,"t",false,"")
     flagSet.StringVar(&blackFile,"blacklist","","")
     flagSet.StringVar(&blackFile,"b","","")
+    flagSet.Float64Var(&depth,"depth",math.NaN(),"")
+    flagSet.Float64Var(&depth,"d",math.NaN(),"")
     err=flagSet.Parse(os.Args[2:])
     if err!=nil {
         fmt.Println("Error: pathrider stream: "+err.Error())
@@ -57,6 +61,8 @@ func Stream() {
             "                    namely the nodes having no predecessors in case of",
             "                    upstreaming, or the nodes having no successors in case of",
             "                    downstreaming (default: not used by default)",
+            "    * -d/-depth <int>: the maximal depth when up/down streaming from the seed",
+            "                       nodes (default: not used by default)",
             "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted",
             "                            (one node per line), the paths containing such nodes",
             "                            will not be considered (default: not used by",
@@ -96,6 +102,8 @@ func Stream() {
             "                    namely the nodes having no predecessors in case of",
             "                    upstreaming, or the nodes having no successors in case of",
             "                    downstreaming (default: not used by default)",
+            "    * -d/-depth <int>: the maximal depth when up/down streaming from the seed",
+            "                       nodes (default: not used by default)",
             "    * -b/-blacklist <file>: a file containing a list of nodes to be blacklisted",
             "                            (one node per line), the paths containing such nodes",
             "                            will not be considered (default: not used by",
@@ -113,7 +121,9 @@ func Stream() {
             "",
         },"\n"))
     } else if filepath.Ext(outFile)!=".sif" {
-        fmt.Println("Error: pathrider stream: "+outFile+": must have the \".sif\" file extension")
+        fmt.Println("Error: pathrider stream: "+outFile+": the output SIF file must have the \".sif\" file extension")
+    } else if !math.IsNaN(depth) && ((math.Round(depth)!=depth) || (depth<1)) {
+        fmt.Println("Error: pathrider stream: depth must be a positive integer")
     } else if len(flagSet.Args())!=3 {
         fmt.Println("Error: pathrider stream: wrong number of positional arguments, expecting: <networkFile> <seedFile> <direction>")
     } else if (flagSet.Arg(2)!="up") && (flagSet.Arg(2)!="down") {
@@ -147,10 +157,10 @@ func Stream() {
                     fmt.Println(args[2]+"streaming seed nodes")
                     if args[2]=="up" {
                         nodeSP,edgeSP=GetPredecessors(edges)
-                        ward=BackwardEdges(seeds,nodeSP,edgeSP)
+                        ward=BackwardEdges(seeds,nodeSP,edgeSP,depth)
                     } else if args[2]=="down" {
                         nodeSP,edgeSP=GetSuccessors(edges)
-                        ward=ForwardEdges(seeds,nodeSP,edgeSP)
+                        ward=ForwardEdges(seeds,nodeSP,edgeSP,depth)
                     }
                     if len(ward)==0 {
                         fmt.Println("Warning: pathrider stream: "+args[1]+": no "+args[2]+"stream paths found")
